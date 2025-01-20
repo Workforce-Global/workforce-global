@@ -3,6 +3,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const Contact = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -14,9 +16,12 @@ const Contact = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-16 min-h-screen">
-      <div className="max-w-6xl mx-auto">
-        <div className="glass-card rounded-xl p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-fade-up">
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow pt-16">
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="glass-card rounded-xl p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-fade-up">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold">
               Please Get In Touch Let's Talk
@@ -88,8 +93,11 @@ const Contact = () => {
               </button>
             </form>
           </Card>
+            </div>
+          </div>
         </div>
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 };
