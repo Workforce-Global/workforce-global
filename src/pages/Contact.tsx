@@ -23,7 +23,7 @@ const Contact = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const response = await fetch("/api/handler", {
+      const response = await fetch("/.netlify/functions/sendEmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const Contact = () => {
           name: `${data.firstName} ${data.lastName}`,
           email: data.email,
           message: data.message,
-          bccEmails: ["rodneyhagan74.com", "aliodimekitonima@gmail.com"], // Replace with your actual BCC emails
+          bccEmails: ["rodneyhagan74@gmail.com", "aliodimekitonima@gmail.com"],
         }),
       });
 

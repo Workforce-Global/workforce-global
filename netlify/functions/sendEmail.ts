@@ -1,16 +1,16 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { Handler } from "@netlify/functions";
 import nodemailer from "nodemailer";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
+const handler: Handler = async (event) => {
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ message: "Method not allowed" }),
+    };
   }
 
   try {
-    const { name, email, message, bccEmails } = req.body;
+    const { name, email, message, bccEmails } = JSON.parse(event.body || "{}");
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -43,9 +43,18 @@ export default async function handler(
     };
 
     await transporter.sendMail(mailOptions);
-    res.status(200).json({ message: "Email sent successfully" });
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: "Email sent successfully" }),
+    };
   } catch (error) {
     console.error("Error sending email:", error);
-    res.status(500).json({ message: "Error sending email" });
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ message: "Error sending email" }),
+    };
   }
-}
+};
+
+export { handler };
