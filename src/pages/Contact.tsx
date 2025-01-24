@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Mail, MapPin, Phone } from "lucide-react";
+import emailjs from "emailjs-com";
 
 interface FormData {
   firstName: string;
@@ -24,25 +25,27 @@ const Contact = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const response = await fetch("/.netlify/functions/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: `${data.firstName} ${data.lastName}`,
-          email: data.email,
-          message: data.message,
-          bccEmails: ["rodneyhagan74@gmail.com", "aliodimekitonima@gmail.com"],
-        }),
-      });
+      const templateParams = {
+        name: `${data.firstName} ${data.lastName}`,
+        email: data.email,
+        message: data.message,
+        bcc_email: "rodneyhagan74@gmail.com,aliodimekitonima@gmail.com",
+      };
 
-      if (!response.ok) {
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, // Replace with your EmailJS Service ID
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // Replace with your EmailJS Template ID
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY // Replace with your EmailJS Public Key
+      );
+
+      if (response.status === 200) {
+        toast.success("Message sent successfully!");
+        reset();
+      } else {
         throw new Error("Failed to send message");
       }
-
-      toast.success("Message sent successfully!");
-      reset();
     } catch (error) {
       console.error("Error sending message:", error);
       toast.error("Failed to send message. Please try again.");
@@ -53,12 +56,12 @@ const Contact = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow pt-16">
-        <div className="container mx-auto px-4 py-16">
-          <div className="max-w-6xl mx-auto">
+        <section className="min-h-screen bg-background">
+          <div className="section-content">
+            <h1 className="section-title">Get In Touch</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* Contact Form */}
-              <Card className="p-6 animate-slide-in">
-                <h2 className="text-2xl font-bold mb-6">Get In Touch</h2>
+              <Card className="p-6 glass-card animate-fade-up">
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
@@ -121,7 +124,7 @@ const Contact = () => {
               </Card>
 
               {/* Contact Information */}
-              <div className="space-y-8 flex flex-col justify-center">
+              <div className="space-y-8 animate-fade-up delay-100">
                 <div>
                   <h2 className="text-2xl font-bold mb-6">
                     Contact Information
@@ -148,7 +151,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold">Email Us</h3>
                       <p className="text-muted-foreground">
-                        info@workforceglobal.com
+                        gl.workforce@gmail.com
                       </p>
                     </div>
                   </div>
@@ -164,7 +167,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </main>
       <Footer />
     </div>

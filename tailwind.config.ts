@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -85,14 +86,23 @@ export default {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        pulse: {
+          "0%, 100%": {
+            opacity: "1",
+          },
+          "50%": {
+            opacity: "0.5",
+          },
+        },
       },
       animation: {
-        "fade-up": "fade-up 0.5s ease-out",
-        "fade-down": "fade-down 0.5s ease-out",
-        "slide-in": "slide-in 0.5s ease-out",
-        "fade-in": "fade-in 0.5s ease-out",
+        "fade-up": "fade-up 1.2s ease-out",
+        "fade-down": "fade-down 1.2s ease-out",
+        "slide-in": "slide-in 1.2s ease-out",
+        "fade-in": "fade-in 1.2s ease-out",
+        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animate],
 } satisfies Config;

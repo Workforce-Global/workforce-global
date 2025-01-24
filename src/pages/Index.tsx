@@ -35,10 +35,9 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
 
-      <main className="flex-grow">
+      <main className="flex-grow snap-y snap-mandatory overflow-y-auto">
         {/* Hero Section */}
-        <section className="relative h-[90vh] flex items-center">
-          {/* Background Image - TODO: Replace with actual hero image */}
+        <section className="relative h-screen flex items-center snap-start animate-fade-in">
           <div
             className="absolute inset-0 z-0"
             style={{
@@ -48,24 +47,22 @@ const Index = () => {
               backgroundPosition: "center",
             }}
           >
-            <div className="absolute inset-0 bg-black/60" />{" "}
-            {/* Translucent overlay */}
+            <div className="absolute inset-0 bg-black/60" />
           </div>
 
-          {/* Content */}
           <div className="container mx-auto relative z-10 px-4">
             <div className="max-w-3xl">
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-down">
                 Driving Innovation Through Software.
               </h1>
-              <p className="text-xl text-white/90 mb-8 animate-fade-up">
+              <p className="text-xl text-white/90 mb-8 animate-fade-up delay-200">
                 We specialize in transforming complex challenges into elegant
                 solutions, driving technological advancement one project at a
                 time.
               </p>
               <Link
                 to="/contact"
-                className="inline-flex items-center px-6 py-3 rounded-full bg-white text-black hover:bg-white/90 transition-colors animate-fade-up"
+                className="inline-flex items-center px-6 py-3 rounded-full bg-white text-black hover:bg-white/90 transition-colors animate-fade-up delay-300"
               >
                 Our Services
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -75,14 +72,18 @@ const Index = () => {
         </section>
 
         {/* Services Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="min-h-screen py-20 bg-gray-50 snap-start">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">
+            <h2 className="text-3xl font-bold text-center mb-12 animate-fade-down">
               Our Services
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 animate-fade-up"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                   <CardHeader>
                     <div className="mb-4 text-primary">{service.icon}</div>
                     <CardTitle className="text-xl">{service.title}</CardTitle>
@@ -99,16 +100,18 @@ const Index = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 px-4">
+        <section className="min-h-screen py-16 px-4 snap-start">
           <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 animate-fade-down">
+              Ready to Get Started?
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-up delay-100">
               Join our community today and start building amazing projects with
               developers from around the world.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1 animate-fade-up delay-200"
             >
               Get Started
               <ArrowRight className="ml-2 h-4 w-4" />

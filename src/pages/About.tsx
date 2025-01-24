@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 
 const About = () => {
   const offerings = [
@@ -103,21 +102,21 @@ const About = () => {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen snap-y snap-mandatory overflow-y-auto scroll-smooth">
       <Header />
-      <main className="flex-grow pt-16">
+      <main className="flex-grow">
         {/* Who We Are */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8">Who We Are</h2>
-            <div className="max-w-3xl space-y-6">
-              <p className="text-lg text-muted-foreground">
+        <section className="min-h-screen snap-start flex items-center justify-center bg-gradient-to-b from-white to-gray-50 py-16">
+          <div className="container mx-auto px-4 animate-fade-up">
+            <h2 className="text-4xl font-bold mb-8 text-center">Who We Are</h2>
+            <div className="max-w-3xl mx-auto space-y-6">
+              <p className="text-lg text-muted-foreground text-center leading-relaxed">
                 At Workforce Global, we are a team of passionate innovators
                 dedicated to transforming businesses through cutting-edge
                 software solutions. Our commitment to excellence drives us to
                 deliver exceptional results that exceed expectations.
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-muted-foreground text-center leading-relaxed">
                 With years of experience in the industry, we've built a
                 reputation for creating robust, scalable, and user-friendly
                 applications that solve complex business challenges. Our
@@ -129,12 +128,16 @@ const About = () => {
         </section>
 
         {/* What We Do */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12">What We Do</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section className="min-h-screen snap-start flex items-center justify-center bg-gradient-to-b from-gray-50 to-white py-16">
+          <div className="container mx-auto px-4 animate-fade-up">
+            <h2 className="text-4xl font-bold mb-12 text-center">What We Do</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {offerings.map((offering, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="glass-card hover:scale-105 transition-all duration-300 animate-fade-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                   <CardHeader>
                     <div className="mb-4 text-primary">{offering.icon}</div>
                     <CardTitle>{offering.title}</CardTitle>
@@ -146,12 +149,18 @@ const About = () => {
         </section>
 
         {/* What We Offer */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12">What We Offer</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <section className="min-h-screen snap-start flex items-center justify-center bg-gradient-to-b from-white to-gray-50 py-16">
+          <div className="container mx-auto px-4 animate-fade-up">
+            <h2 className="text-4xl font-bold mb-12 text-center">
+              What We Offer
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {offerings.map((offering, index) => (
-                <div key={index} className="flex gap-4">
+                <div
+                  key={index}
+                  className="flex gap-4 glass-card p-6 rounded-lg hover:scale-105 transition-all duration-300 animate-fade-up"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                   <div className="text-primary">{offering.icon}</div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">
@@ -168,13 +177,19 @@ const About = () => {
         </section>
 
         {/* Why Us */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12">Why Choose Us?</h2>
+        <section className="min-h-screen snap-start flex items-center justify-center bg-gradient-to-b from-gray-50 to-white py-16">
+          <div className="container mx-auto px-4 animate-fade-up">
+            <h2 className="text-4xl font-bold mb-12 text-center">
+              Why Choose Us?
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               {whyUs.map((reason, index) => (
-                <div key={index} className="flex items-center gap-4">
-                  <CheckCircle className="text-primary h-6 w-6" />
+                <div
+                  key={index}
+                  className="flex items-center gap-4 glass-card p-6 rounded-lg hover:scale-105 transition-all duration-300 animate-fade-up"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <CheckCircle className="text-primary h-6 w-6 flex-shrink-0" />
                   <span className="text-lg">{reason}</span>
                 </div>
               ))}
@@ -183,16 +198,17 @@ const About = () => {
         </section>
 
         {/* Team Section */}
-        <section className="py-16 bg-secondary/30">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">
+        <section className="min-h-screen snap-start flex items-center justify-center bg-gradient-to-b from-white to-gray-50 py-16">
+          <div className="container mx-auto px-4 animate-fade-up">
+            <h2 className="text-4xl font-bold text-center mb-12">
               Meet Our Team Of Experts
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {team.map((member) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {team.map((member, index) => (
                 <Card
                   key={member.name}
-                  className="overflow-hidden hover:scale-105 transition-transform duration-300"
+                  className="glass-card overflow-hidden hover:scale-105 transition-all duration-300 animate-fade-up"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="aspect-[4/3] relative">
                     <img
@@ -234,22 +250,24 @@ const About = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 px-4 bg-white">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can help you achieve your goals with our
-              innovative solutions.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-            >
-              Contact Us
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+        <section className="min-h-screen snap-start flex items-center justify-center bg-gradient-to-b from-gray-50 to-white py-16">
+          <div className="container mx-auto px-4 text-center animate-fade-up">
+            <div className="glass-card max-w-3xl mx-auto p-12 rounded-2xl">
+              <h2 className="text-4xl font-bold mb-6">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Let's discuss how we can help you achieve your goals with our
+                innovative solutions.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center px-8 py-4 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors animate-pulse"
+              >
+                Contact Us
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </section>
       </main>
