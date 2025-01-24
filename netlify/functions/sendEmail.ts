@@ -13,10 +13,12 @@ const handler: Handler = async (event) => {
     const { name, email, message, bccEmails } = JSON.parse(event.body || "{}");
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.sendgrid.net",
+      port: 587,
+      secure: false, // Use TLS
       auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
+        user: "apikey", // Always use 'apikey' as the username
+        pass: "YOUR_SENDGRID_API_KEY", // Your SendGrid API key
       },
     });
 
