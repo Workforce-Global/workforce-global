@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 interface FormData {
   firstName: string;
@@ -54,23 +55,10 @@ const Contact = () => {
       <main className="flex-grow pt-16">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-6xl mx-auto">
-            <div className="glass-card rounded-xl p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-fade-up">
-              <div className="space-y-6">
-                <h1 className="text-4xl md:text-5xl font-bold">
-                  Please Get In Touch Let's Talk
-                </h1>
-                <p className="text-muted-foreground text-lg">
-                  Have a project in mind? Want to collaborate? Or just want to
-                  say hi? We'd love to hear from you!
-                </p>
-                <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-                  alt="Contact us"
-                  className="rounded-lg w-full h-auto object-cover animate-fade-in"
-                />
-              </div>
-
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Contact Form */}
               <Card className="p-6 animate-slide-in">
+                <h2 className="text-2xl font-bold mb-6">Get In Touch</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
@@ -131,6 +119,49 @@ const Contact = () => {
                   </button>
                 </form>
               </Card>
+
+              {/* Contact Information */}
+              <div className="space-y-8 flex flex-col justify-center">
+                <div>
+                  <h2 className="text-2xl font-bold mb-6">
+                    Contact Information
+                  </h2>
+                  <p className="text-muted-foreground mb-8">
+                    Have a project in mind? Want to collaborate? Or just want to
+                    say hi? We'd love to hear from you!
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <MapPin className="h-6 w-6 text-primary mt-1" />
+                    <div>
+                      <h3 className="font-semibold">Our Location</h3>
+                      <p className="text-muted-foreground">
+                        123 Business Street, Tech City, TC 12345
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <Mail className="h-6 w-6 text-primary mt-1" />
+                    <div>
+                      <h3 className="font-semibold">Email Us</h3>
+                      <p className="text-muted-foreground">
+                        info@workforceglobal.com
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <Phone className="h-6 w-6 text-primary mt-1" />
+                    <div>
+                      <h3 className="font-semibold">Call Us</h3>
+                      <p className="text-muted-foreground">+1 (234) 567-8900</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
