@@ -141,7 +141,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold">Our Location</h3>
                       <p className="text-muted-foreground">
-                        123 Business Street, Tech City, TC 12345
+                        1-6 Drake Avenue, Airport Residential Area, Accra, Ghana
                       </p>
                     </div>
                   </div>
@@ -160,7 +160,7 @@ const Contact = () => {
                     <Phone className="h-6 w-6 text-primary mt-1" />
                     <div>
                       <h3 className="font-semibold">Call Us</h3>
-                      <p className="text-muted-foreground">+1 (234) 567-8900</p>
+                      <p className="text-muted-foreground">(+233) 0537066043</p>
                     </div>
                   </div>
                 </div>

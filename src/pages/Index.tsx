@@ -1,10 +1,19 @@
 import { ArrowRight, Code, Cpu, Database, Network } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState } from "react";
 
 const Index = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    window.scrollTo(0, 0);
+    navigate(path);
+    setIsOpen(false);
+  };
   const services = [
     {
       icon: <Code className="h-8 w-8" />,
@@ -53,14 +62,16 @@ const Index = () => {
           <div className="container mx-auto relative z-10 px-4">
             <div className="max-w-3xl">
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-down">
-                Driving Innovation Through Software.
+                Transforming Ideas Into Reality
               </h1>
               <p className="text-xl text-white/90 mb-8 animate-fade-up delay-200">
-                We specialize in transforming complex challenges into elegant
-                solutions, driving technological advancement one project at a
-                time.
+                We craft tailored digital solutions that drive efficiency,
+                innovation, and growth. Whether you need a custom application,
+                seamless system integration, or advanced automation, our expert
+                team is here to turn your vision into reality.
               </p>
               <Link
+                onClick={() => handleNavigation("/")}
                 to="/contact"
                 className="inline-flex items-center px-6 py-3 rounded-full bg-white text-black hover:bg-white/90 transition-colors animate-fade-up delay-300"
               >
@@ -110,6 +121,7 @@ const Index = () => {
               developers from around the world.
             </p>
             <Link
+              onClick={() => handleNavigation("/")}
               to="/contact"
               className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1 animate-fade-up delay-200"
             >

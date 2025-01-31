@@ -6,12 +6,21 @@ import {
   Database,
   Network,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useState } from "react";
 
 const About = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    window.scrollTo(0, 0);
+    navigate(path);
+    setIsOpen(false);
+  };
   const offerings = [
     {
       icon: <Code className="h-6 w-6" />,
@@ -39,7 +48,7 @@ const About = () => {
     {
       name: "Mekitonima Aliodi",
       role: "Lead Developer",
-      image: "Meki.png", // TODO: Replace with actual team member image
+      image: "/Meki.png", // TODO: Replace with actual team member image
       socials: [
         {
           name: "linkedin",
@@ -56,7 +65,7 @@ const About = () => {
     {
       name: "Mohammed Murshid",
       role: "UI/UX Designer",
-      image: "Mohammed.png", // TODO: Replace with actual team member image
+      image: "/Mohammed.png", // TODO: Replace with actual team member image
       socials: [
         {
           name: "twitter",
@@ -123,27 +132,6 @@ const About = () => {
                 approach combines technical expertise with creative
                 problem-solving to deliver solutions that drive real value.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* What We Do */}
-        <section className="min-h-screen snap-start flex items-center justify-center bg-gradient-to-b from-gray-50 to-white py-16">
-          <div className="container mx-auto px-4 animate-fade-up">
-            <h2 className="text-4xl font-bold mb-12 text-center">What We Do</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {offerings.map((offering, index) => (
-                <Card
-                  key={index}
-                  className="glass-card hover:scale-105 transition-all duration-300 animate-fade-in"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <CardHeader>
-                    <div className="mb-4 text-primary">{offering.icon}</div>
-                    <CardTitle>{offering.title}</CardTitle>
-                  </CardHeader>
-                </Card>
-              ))}
             </div>
           </div>
         </section>
@@ -261,6 +249,7 @@ const About = () => {
                 innovative solutions.
               </p>
               <Link
+                onClick={() => handleNavigation("/")}
                 to="/contact"
                 className="inline-flex items-center px-8 py-4 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors animate-pulse"
               >

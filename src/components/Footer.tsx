@@ -1,11 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Github, Twitter, Linkedin } from "lucide-react";
+import { useState } from "react";
 
 const Footer = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    window.scrollTo(0, 0);
+    navigate(path);
+    setIsOpen(false);
+  };
   return (
     <footer className="bg-gray-900 text-white/90">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white">
               Workforce Global
@@ -20,6 +29,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
+                  onClick={() => handleNavigation("/")}
                   to="/"
                   className="text-sm text-muted-foreground hover:text-white transition-colors"
                 >
@@ -36,6 +46,7 @@ const Footer = () => {
               </li> */}
               <li>
                 <Link
+                  onClick={() => handleNavigation("/")}
                   to="/about"
                   className="text-sm text-muted-foreground hover:text-white transition-colors"
                 >
@@ -46,63 +57,42 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Resources</h4>
+            <h4 className="text-sm font-semibold">Connect</h4>
             <ul className="space-y-2">
               <li>
-                <Link
-                  to="/docs"
-                  className="text-sm text-muted-foreground hover:text-white transition-colors"
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-white transition-colors flex items-center gap-2"
                 >
-                  Documentation
-                </Link>
+                  <Github size={16} />
+                  GitHub
+                </a>
               </li>
               <li>
-                <Link
-                  to="/blog"
-                  className="text-sm text-muted-foreground hover:text-white transition-colors"
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-white transition-colors flex items-center gap-2"
                 >
-                  Blog
-                </Link>
+                  <Twitter size={16} />
+                  Twitter
+                </a>
               </li>
               <li>
-                <Link
-                  to="/faq"
-                  className="text-sm text-muted-foreground hover:text-white transition-colors"
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-white transition-colors flex items-center gap-2"
                 >
-                  FAQ
-                </Link>
+                  <Linkedin size={16} />
+                  LinkedIn
+                </a>
               </li>
             </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Connect</h4>
-            <div className="flex space-x-4">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors"
-              >
-                <Github size={20} />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors"
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors"
-              >
-                <Linkedin size={20} />
-              </a>
-            </div>
           </div>
         </div>
 
