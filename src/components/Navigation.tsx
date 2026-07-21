@@ -1,21 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
-const WGLogo = ({ white = false }: { white?: boolean }) => {
-  const fill = white ? "#F8F8F6" : "#0B0B0B";
-  return (
-    <svg width="38" height="38" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Top-left quadrant — filled semicircle */}
-      <path d="M56 56 L8 56 A48 48 0 0 1 56 8 Z" fill={fill} />
-      {/* Top-right quadrant — rounded rectangle */}
-      <rect x="64" y="8" width="48" height="48" rx="24" fill={fill} />
-      {/* Bottom-left quadrant — square */}
-      <rect x="8" y="64" width="48" height="48" rx="6" fill={fill} />
-      {/* Bottom-right quadrant — filled arc/pie */}
-      <path d="M64 112 L64 64 L112 64 A48 48 0 0 1 64 112 Z" fill={fill} />
-    </svg>
-  );
-};
+
 
 const navItems = [
   { label: "Home", href: "#hero" },
@@ -66,11 +52,10 @@ const Navigation = () => {
       />
 
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-jet/95 backdrop-blur-xl border-b border-white/5 shadow-premium-md"
-            : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+          ? "bg-jet/95 backdrop-blur-xl border-b border-white/5 shadow-premium-md"
+          : "bg-transparent"
+          }`}
       >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between h-18 py-4">
@@ -81,20 +66,14 @@ const Navigation = () => {
               aria-label="Workforce Global Home"
             >
               <div className="transition-transform duration-300 group-hover:scale-105">
-                <WGLogo white />
+                <img src="./wg_whiteindarkfull-removebg-preview.png" className="w-20 h-20" />
               </div>
               <div className="flex flex-col leading-none">
                 <span
                   className="text-[11px] font-semibold tracking-[0.22em] uppercase text-soft-white"
                   style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
-                  WORKFORCE
-                </span>
-                <span
-                  className="text-[11px] font-semibold tracking-[0.22em] uppercase text-gold"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                >
-                  GLOBAL
+                  WORKFORCE GLOBAL
                 </span>
               </div>
             </button>
@@ -161,9 +140,8 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-400 ${
-            menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className={`lg:hidden overflow-hidden transition-all duration-400 ${menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+            }`}
           style={{ background: "rgba(11, 11, 11, 0.97)", backdropFilter: "blur(20px)" }}
         >
           <div className="px-6 py-6 space-y-1 border-t border-white/5">

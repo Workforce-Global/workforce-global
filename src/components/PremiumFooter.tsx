@@ -1,13 +1,5 @@
 import { Github, Twitter, Linkedin, Instagram, ArrowUpRight } from "lucide-react";
 
-const WGLogo = () => (
-  <svg width="32" height="32" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M56 56 L8 56 A48 48 0 0 1 56 8 Z" fill="#C6A15B" />
-    <rect x="64" y="8" width="48" height="48" rx="24" fill="#C6A15B" />
-    <rect x="8" y="64" width="48" height="48" rx="6" fill="#C6A15B" />
-    <path d="M64 112 L64 64 L112 64 A48 48 0 0 1 64 112 Z" fill="#C6A15B" />
-  </svg>
-);
 
 const footerLinks = {
   Company: [
@@ -62,19 +54,13 @@ const PremiumFooter = () => {
               onClick={() => scrollTo("#hero")}
               className="flex items-center gap-3 mb-5 group"
             >
-              <WGLogo />
+              <img src="./wg_whiteindarkfull-removebg-preview.png" className="w-20 h-20" />
               <div className="flex flex-col leading-none">
                 <span
                   className="text-[10px] font-semibold tracking-[0.2em] uppercase text-soft-white"
                   style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
-                  WORKFORCE
-                </span>
-                <span
-                  className="text-[10px] font-semibold tracking-[0.2em] uppercase text-gold"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                >
-                  GLOBAL
+                  WORKFORCE GLOBAL
                 </span>
               </div>
             </button>
