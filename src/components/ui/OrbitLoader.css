@@ -1,0 +1,304 @@
+/* ==========================================================================
+   Orbit Loader Component Styles - Hardware-Accelerated (60 FPS)
+   ========================================================================== */
+
+/* Full overlay container */
+.orbit-loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 350ms cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, visibility;
+}
+
+/* Theme backgrounds */
+.orbit-loader-overlay.dark-theme {
+  background-color: rgba(11, 11, 11, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: #F8F8F6;
+}
+
+.orbit-loader-overlay.light-theme {
+  background-color: rgba(248, 248, 246, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: #0B0B0B;
+}
+
+/* Main loader stage */
+.orbit-loader-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(260px, 45vw, 360px);
+  height: clamp(260px, 45vw, 360px);
+  user-select: none;
+}
+
+/* Ambient central glow */
+.orbit-center-glow {
+  position: absolute;
+  inset: 15%;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.dark-theme .orbit-center-glow {
+  background: radial-gradient(circle, rgba(198, 161, 91, 0.22) 0%, rgba(198, 161, 91, 0.05) 50%, transparent 75%);
+  filter: blur(24px);
+}
+
+.light-theme .orbit-center-glow {
+  background: radial-gradient(circle, rgba(198, 161, 91, 0.28) 0%, rgba(198, 161, 91, 0.08) 50%, transparent 75%);
+  filter: blur(20px);
+}
+
+/* Stationary Brand Logo Container */
+.orbit-logo-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s ease;
+}
+
+.orbit-logo-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.dark-theme .orbit-logo-wrapper {
+  background: rgba(26, 26, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.light-theme .orbit-logo-wrapper {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(198, 161, 91, 0.2);
+  box-shadow: 0 12px 36px rgba(198, 161, 91, 0.12);
+}
+
+.orbit-logo-img {
+  width: clamp(56px, 12vw, 84px);
+  height: clamp(56px, 12vw, 84px);
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(198, 161, 91, 0.25));
+}
+
+.orbit-brand-text {
+  margin-top: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(10px, 2.5vw, 12px);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.dark-theme .orbit-brand-text {
+  color: #F8F8F6;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+.light-theme .orbit-brand-text {
+  color: #0B0B0B;
+}
+
+/* Orbital Rings (Faint track lines) */
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.orbit-ring-1 {
+  width: 54%;
+  height: 54%;
+  border: 1px solid rgba(198, 161, 91, 0.18);
+}
+
+.orbit-ring-2 {
+  width: 76%;
+  height: 76%;
+  border: 1px dashed rgba(198, 161, 91, 0.14);
+}
+
+.orbit-ring-3 {
+  width: 98%;
+  height: 98%;
+  border: 1px solid rgba(198, 161, 91, 0.12);
+}
+
+.light-theme .orbit-ring-1 { border-color: rgba(198, 161, 91, 0.35); }
+.light-theme .orbit-ring-2 { border-color: rgba(198, 161, 91, 0.25); }
+.light-theme .orbit-ring-3 { border-color: rgba(198, 161, 91, 0.2); }
+
+/* Rotating Orbit Tracks */
+.orbit-track {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Track sizes matching rings */
+.orbit-track-1 {
+  width: 54%;
+  height: 54%;
+  animation: orbit-spin-cw 2.8s linear infinite;
+}
+
+.orbit-track-2 {
+  width: 76%;
+  height: 76%;
+  animation: orbit-spin-ccw 3.9s linear infinite;
+}
+
+.orbit-track-3 {
+  width: 98%;
+  height: 98%;
+  animation: orbit-spin-cw 5.4s linear infinite;
+}
+
+.orbit-track-4 {
+  width: 76%;
+  height: 76%;
+  animation: orbit-spin-cw 4.6s linear infinite;
+}
+
+.orbit-track-5 {
+  width: 98%;
+  height: 98%;
+  animation: orbit-spin-ccw 6.2s linear infinite;
+}
+
+/* Glowing Orbit Particle Dots */
+.orbit-particle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  will-change: transform, box-shadow;
+}
+
+/* Particle styling variants */
+.particle-gold-primary {
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #FFF 10%, #D4B57A 40%, #C6A15B 100%);
+  box-shadow: 0 0 12px #C6A15B, 0 0 24px rgba(198, 161, 91, 0.8), 0 0 36px rgba(198, 161, 91, 0.4);
+}
+
+.particle-gold-bright {
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #FFF 20%, #F5D77F 60%, #D4B57A 100%);
+  box-shadow: 0 0 10px #D4B57A, 0 0 20px rgba(212, 181, 122, 0.9);
+}
+
+.particle-gold-amber {
+  width: 11px;
+  height: 11px;
+  background: radial-gradient(circle, #FFF 10%, #C6A15B 50%, #9E7B3D 100%);
+  box-shadow: 0 0 14px #C6A15B, 0 0 28px rgba(198, 161, 91, 0.85);
+}
+
+.particle-gold-light {
+  width: 7px;
+  height: 7px;
+  background: #FFFFFF;
+  box-shadow: 0 0 8px #FFF, 0 0 16px rgba(255, 255, 255, 0.9), 0 0 24px #C6A15B;
+}
+
+.particle-gold-dim {
+  width: 9px;
+  height: 9px;
+  background: radial-gradient(circle, #E8D3A7 20%, #9E7B3D 80%);
+  box-shadow: 0 0 10px #9E7B3D, 0 0 20px rgba(158, 123, 61, 0.7);
+}
+
+/* 60 FPS Keyframes using pure GPU transform rotation */
+@keyframes orbit-spin-cw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbit-spin-ccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+/* Ambient status indicator text below loader stage */
+.orbit-status-msg {
+  position: absolute;
+  bottom: -44px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+}
+
+.dark-theme .orbit-status-msg { color: #A8A8A8; }
+.light-theme .orbit-status-msg { color: #555555; }
+
+/* Accessible Pulse Animation for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .orbit-track {
+    animation: none !important;
+  }
+  
+  .orbit-particle {
+    animation: orbit-pulse-reduced 2s ease-in-out infinite !important;
+  }
+
+  .orbit-logo-container {
+    animation: orbit-pulse-reduced 2.5s ease-in-out infinite !important;
+  }
+}
+
+@keyframes orbit-pulse-reduced {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+}

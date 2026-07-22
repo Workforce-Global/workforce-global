@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
-
-
+import { Menu, X, ChevronDown, Moon, Sun } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "#hero" },
@@ -22,6 +20,7 @@ const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [progress, setProgress] = useState(0);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +32,18 @@ const Navigation = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleTheme = () => {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    if (newMode) {
+      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
+    } else {
+      document.documentElement.classList.add("light");
+      document.documentElement.classList.remove("dark");
+    }
+  };
 
   const scrollToSection = (href: string) => {
     setMenuOpen(false);
@@ -53,28 +64,24 @@ const Navigation = () => {
 
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? "bg-jet/95 backdrop-blur-xl border-b border-white/5 shadow-premium-md"
-          : "bg-transparent"
+          ? "bg-jet/95 backdrop-blur-xl border-b border-white/5 shadow-premium-md py-2"
+          : "bg-transparent py-3"
           }`}
       >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
-          <div className="flex items-center justify-between h-18 py-4">
+          <div className="flex items-center justify-between h-16 md:h-18">
             {/* Logo */}
             <button
               onClick={() => scrollToSection("#hero")}
-              className="flex items-center gap-3 group"
+              className="flex items-center gap-3 group focus:outline-none"
               aria-label="Workforce Global Home"
             >
-              <div className="transition-transform duration-300 group-hover:scale-105">
-                <img src="./wg_whiteindarkfull-removebg-preview.png" className="w-20 h-20" />
-              </div>
-              <div className="flex flex-col leading-none">
-                <span
-                  className="text-[11px] font-semibold tracking-[0.22em] uppercase text-soft-white"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                >
-                  WORKFORCE GLOBAL
-                </span>
+              <div className="transition-transform duration-300 group-hover:scale-105 flex items-center">
+                <img
+                  src={isDarkMode ? "./wg_whiteindarkfull-removebg-preview.png" : "./wg_darkinwhite_full-removebg-preview.png"}
+                  alt="Workforce Global Logo"
+                  className="h-13 md:h-13 w-auto object-contain max-h-13"
+                />
               </div>
             </button>
 
@@ -117,8 +124,17 @@ const Navigation = () => {
               ))}
             </nav>
 
-            {/* CTA */}
-            <div className="hidden lg:block">
+            {/* CTA & Controls */}
+            <div className="hidden lg:flex items-center gap-4">
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full border border-white/10 text-warm-gray hover:text-gold hover:border-gold/40 transition-colors"
+                title={isDarkMode ? "Switch to Light Theme" : "Switch to Dark Theme"}
+                aria-label="Toggle Theme"
+              >
+                {isDarkMode ? <Sun size={16} /> : <Moon size={16} />}
+              </button>
+
               <button
                 onClick={() => scrollToSection("#contact")}
                 className="btn-secondary text-xs px-5 py-2.5"
@@ -155,7 +171,7 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            <div className="pt-4">
+            <div className="pt-4 flex flex-col gap-3">
               <button
                 onClick={() => scrollToSection("#contact")}
                 className="btn-secondary w-full justify-center"
