@@ -80,30 +80,33 @@ const TechnologiesSection = () => {
           {filtered.map((tech, i) => (
             <div
               key={tech.name}
-              className={`tech-card ${gridVisible ? "reveal-scale visible" : "reveal-scale"}`}
+              className={`tech-card group ${gridVisible ? "reveal-scale visible" : "reveal-scale"}`}
               style={{ transitionDelay: `${i * 50}ms` }}
             >
-              {/* Icon */}
-              <div
-                className="text-2xl mb-2 leading-none select-none"
-                aria-hidden="true"
-              >
-                {tech.icon}
+              {/* Content Wrapper that fades on hover */}
+              <div className="flex flex-col items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
+                {/* Icon */}
+                <div
+                  className="text-2xl mb-2 leading-none select-none"
+                  aria-hidden="true"
+                >
+                  {tech.icon}
+                </div>
+                {/* Name */}
+                <span
+                  className="text-xs font-semibold text-foreground text-center"
+                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                >
+                  {tech.name}
+                </span>
+                {/* Category badge */}
+                <span
+                  className="text-[9px] text-gold/60 mt-0.5"
+                  style={{ fontFamily: "'Inter', sans-serif" }}
+                >
+                  {tech.category}
+                </span>
               </div>
-              {/* Name */}
-              <span
-                className="text-xs font-semibold text-foreground text-center"
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-              >
-                {tech.name}
-              </span>
-              {/* Category badge */}
-              <span
-                className="text-[9px] text-gold/60 mt-0.5"
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              >
-                {tech.category}
-              </span>
               {/* Hover tooltip */}
               <div className="tech-tooltip text-[10px] leading-tight">
                 {tech.description}
