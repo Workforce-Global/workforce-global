@@ -38,7 +38,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-28 bg-jet relative overflow-hidden">
+    <section id="contact" className="py-28 bg-background relative overflow-hidden">
       {/* Subtle background dot pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div
@@ -73,7 +73,7 @@ const ContactSection = () => {
           <div className="lg:col-span-2 space-y-6">
             {/* Info card */}
             <div className="card-premium">
-              <h3 className="text-lg font-bold text-soft-white font-manrope mb-6">
+              <h3 className="text-lg font-bold text-foreground font-manrope mb-6">
                 Contact Information
               </h3>
               <div className="space-y-5">
@@ -109,7 +109,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <div
-                        className="text-xs text-warm-gray mb-0.5"
+                        className="text-xs text-muted-foreground mb-0.5"
                         style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                       >
                         {label}
@@ -117,13 +117,13 @@ const ContactSection = () => {
                       {href ? (
                         <a
                           href={href}
-                          className="text-sm text-soft-white hover:text-gold transition-colors"
+                          className="text-sm text-foreground hover:text-gold transition-colors"
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
                           {value}
                         </a>
                       ) : (
-                        <span className="text-sm text-soft-white" style={{ fontFamily: "'Inter', sans-serif" }}>
+                        <span className="text-sm text-foreground" style={{ fontFamily: "'Inter', sans-serif" }}>
                           {value}
                         </span>
                       )}
@@ -135,7 +135,7 @@ const ContactSection = () => {
 
             {/* Social links */}
             <div className="card-premium">
-              <h4 className="text-sm font-semibold text-soft-white mb-4 font-manrope">
+              <h4 className="text-sm font-semibold text-foreground mb-4 font-manrope">
                 Follow Us
               </h4>
               <div className="flex flex-wrap gap-2">
@@ -143,7 +143,7 @@ const ContactSection = () => {
                   <a
                     key={platform}
                     href="#"
-                    className="px-4 py-2 rounded-full text-xs border border-white/10 text-warm-gray hover:border-gold/30 hover:text-gold transition-all duration-300"
+                    className="px-4 py-2 rounded-full text-xs border border-white/10 text-muted-foreground hover:border-gold/30 hover:text-gold transition-all duration-300"
                     style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                   >
                     {platform}
@@ -160,10 +160,10 @@ const ContactSection = () => {
                 <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mb-6">
                   <CheckCircle2 size={32} className="text-gold" />
                 </div>
-                <h3 className="text-xl font-bold text-soft-white font-manrope mb-3">
+                <h3 className="text-xl font-bold text-foreground font-manrope mb-3">
                   Message Sent!
                 </h3>
-                <p className="text-warm-gray text-sm max-w-xs" style={{ fontFamily: "'Inter', sans-serif" }}>
+                <p className="text-muted-foreground text-sm max-w-xs" style={{ fontFamily: "'Inter', sans-serif" }}>
                   Thank you for reaching out. Our team will get back to you within 24 hours.
                 </p>
               </div>
@@ -172,7 +172,7 @@ const ContactSection = () => {
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label
-                      className="block text-xs text-warm-gray mb-2"
+                      className="block text-xs text-muted-foreground mb-2"
                       htmlFor="contact-name"
                       style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                     >
@@ -191,7 +191,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <label
-                      className="block text-xs text-warm-gray mb-2"
+                      className="block text-xs text-muted-foreground mb-2"
                       htmlFor="contact-email"
                       style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                     >
@@ -212,7 +212,7 @@ const ContactSection = () => {
 
                 <div>
                   <label
-                    className="block text-xs text-warm-gray mb-2"
+                    className="block text-xs text-muted-foreground mb-2"
                     htmlFor="contact-company"
                     style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                   >
@@ -231,7 +231,7 @@ const ContactSection = () => {
 
                 <div>
                   <label
-                    className="block text-xs text-warm-gray mb-2"
+                    className="block text-xs text-muted-foreground mb-2"
                     htmlFor="contact-service"
                     style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                   >
@@ -256,7 +256,7 @@ const ContactSection = () => {
 
                 <div>
                   <label
-                    className="block text-xs text-warm-gray mb-2"
+                    className="block text-xs text-muted-foreground mb-2"
                     htmlFor="contact-message"
                     style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                   >

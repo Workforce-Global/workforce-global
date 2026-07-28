@@ -63,7 +63,7 @@ const InnovationSection = () => {
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({ threshold: 0.05 });
 
   return (
-    <section id="innovation" className="py-28 bg-jet relative overflow-hidden">
+    <section id="innovation" className="py-28 bg-background relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-[0.02] blur-[160px] bg-gold pointer-events-none" />
 
@@ -77,7 +77,7 @@ const InnovationSection = () => {
           <div className="gold-line" />
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <h2 className="section-heading max-w-xl">
-              Beyond Software — We Build Ecosystems
+              Beyond Software, We Build Ecosystems
             </h2>
             <p className="section-subheading lg:max-w-sm">
               Our programs cultivate talent, drive innovation, and build the communities
@@ -94,9 +94,8 @@ const InnovationSection = () => {
           {programs.map(({ icon: Icon, title, description, badge, image }, i) => (
             <div
               key={title}
-              className={`group rounded-3xl overflow-hidden border border-white/6 bg-graphite hover:border-gold/20 transition-all duration-500 ${
-                gridVisible ? "reveal visible" : "reveal"
-              }`}
+              className={`group rounded-3xl overflow-hidden border border-white/6 bg-card hover:border-gold/20 transition-all duration-500 ${gridVisible ? "reveal visible" : "reveal"
+                }`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               {/* Image */}
@@ -124,9 +123,9 @@ const InnovationSection = () => {
                   <div className="service-icon-wrap !mb-0 !w-9 !h-9">
                     <Icon size={16} className="text-gold" />
                   </div>
-                  <h3 className="text-lg font-bold text-soft-white font-manrope">{title}</h3>
+                  <h3 className="text-lg font-bold text-foreground font-manrope">{title}</h3>
                 </div>
-                <p className="text-warm-gray text-sm leading-relaxed">{description}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
               </div>
             </div>
           ))}

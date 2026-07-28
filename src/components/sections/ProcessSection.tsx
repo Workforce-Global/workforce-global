@@ -48,7 +48,7 @@ const ProcessSection = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
 
   return (
-    <section id="process" className="py-28 bg-graphite relative overflow-hidden">
+    <section id="process" className="py-28 bg-card relative overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         {/* Header */}
         <div
@@ -136,10 +136,10 @@ const ProcessStep = ({
           >
             {number}
           </div>
-          <h3 className={`text-xl font-bold text-soft-white font-manrope mb-3 ${isLeft ? "md:text-right" : ""}`}>
+          <h3 className={`text-xl font-bold text-foreground font-manrope mb-3 ${isLeft ? "md:text-right" : ""}`}>
             {title}
           </h3>
-          <p className={`text-warm-gray text-sm leading-relaxed mb-4 ${isLeft ? "md:text-right" : ""}`}>
+          <p className={`text-muted-foreground text-sm leading-relaxed mb-4 ${isLeft ? "md:text-right" : ""}`}>
             {description}
           </p>
           <div

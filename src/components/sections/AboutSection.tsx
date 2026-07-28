@@ -17,7 +17,7 @@ const AboutSection = () => {
   const { ref: valuesRef, isVisible: valuesVisible } = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <section id="about" className="py-28 bg-jet relative overflow-hidden">
+    <section id="about" className="py-28 bg-background relative overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.025]">
         <div
@@ -64,7 +64,7 @@ const AboutSection = () => {
                 <Target className="text-gold" size={20} />
                 <span className="section-label text-gold">Our Mission</span>
               </div>
-              <p className="text-warm-gray leading-relaxed text-base">
+              <p className="text-muted-foreground leading-relaxed text-base">
                 To empower startups, businesses, NGOs, and institutions with cutting-edge
                 software solutions and innovation programs that solve real-world problems
                 and drive meaningful change in Africa and beyond.
@@ -82,7 +82,7 @@ const AboutSection = () => {
                 <Eye className="text-gold" size={20} />
                 <span className="section-label text-gold">Our Vision</span>
               </div>
-              <p className="text-warm-gray leading-relaxed text-base">
+              <p className="text-muted-foreground leading-relaxed text-base">
                 To be Africa's most trusted technology partner—building the digital
                 infrastructure that powers the continent's most ambitious companies and ideas.
               </p>
@@ -90,13 +90,13 @@ const AboutSection = () => {
 
             <div className="card-premium flex-1">
               <span className="section-label block mb-4">Our Story</span>
-              <p className="text-warm-gray leading-relaxed text-base mb-4">
+              <p className="text-muted-foreground leading-relaxed text-base mb-4">
                 Workforce Global was founded with a clear conviction: that African talent
                 and ingenuity can build world-class technology. We started as a team of
                 passionate engineers and designers committed to proving that great software
                 can be built anywhere.
               </p>
-              <p className="text-warm-gray leading-relaxed text-base">
+              <p className="text-muted-foreground leading-relaxed text-base">
                 Today, we're a full-service innovation studio—building custom software,
                 organizing hackathons, running product sprints, and partnering with
                 organizations across sectors to engineer solutions that matter.
@@ -125,14 +125,14 @@ const AboutSection = () => {
             {values.map(({ icon: Icon, label }, i) => (
               <div
                 key={label}
-                className={`flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-white/10 bg-graphite hover:border-gold/30 hover:bg-gold/5 transition-all duration-300 cursor-default ${
+                className={`flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-white/10 bg-card hover:border-gold/30 hover:bg-gold/5 transition-all duration-300 cursor-default ${
                   valuesVisible ? "reveal visible" : "reveal"
                 }`}
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <Icon size={14} className="text-gold" />
                 <span
-                  className="text-sm text-warm-gray"
+                  className="text-sm text-muted-foreground"
                   style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   {label}

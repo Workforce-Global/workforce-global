@@ -41,7 +41,7 @@ const GlobalSection = () => {
   const { ref: mapRef, isVisible: mapVisible } = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <section id="global" className="py-28 bg-jet relative overflow-hidden">
+    <section id="global" className="py-28 bg-background relative overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         {/* Header */}
         <div
@@ -158,13 +158,13 @@ const GlobalSection = () => {
             {highlights.map(({ icon: Icon, label }) => (
               <div
                 key={label}
-                className="flex items-center gap-3 p-4 rounded-xl bg-jet/60 border border-white/5"
+                className="flex items-center gap-3 p-4 rounded-xl bg-background/60 border border-white/5"
               >
                 <div className="service-icon-wrap !mb-0 !w-8 !h-8 shrink-0">
                   <Icon size={14} className="text-gold" />
                 </div>
                 <span
-                  className="text-xs text-warm-gray leading-snug"
+                  className="text-xs text-muted-foreground leading-snug"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   {label}

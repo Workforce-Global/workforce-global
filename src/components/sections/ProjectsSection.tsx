@@ -47,7 +47,7 @@ const ProjectsSection = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
 
   return (
-    <section id="projects" className="py-28 bg-jet relative overflow-hidden">
+    <section id="projects" className="py-28 bg-background relative overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         {/* Header */}
         <div
@@ -115,9 +115,9 @@ const ProjectCard = ({
       </div>
 
       {/* Content */}
-      <div className={`p-8 lg:p-10 bg-graphite flex flex-col justify-between ${!isEven ? "lg:order-1" : ""}`}>
+      <div className={`p-8 lg:p-10 bg-card flex flex-col justify-between ${!isEven ? "lg:order-1" : ""}`}>
         <div>
-          <h3 className="text-2xl font-bold text-soft-white font-manrope mb-4">
+          <h3 className="text-2xl font-bold text-foreground font-manrope mb-4">
             {project.name}
           </h3>
 
@@ -127,18 +127,18 @@ const ProjectCard = ({
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 Challenge
               </span>
-              <p className="text-warm-gray text-sm leading-relaxed">{project.challenge}</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">{project.challenge}</p>
             </div>
             <div>
               <span className="text-xs text-gold font-semibold uppercase tracking-wider block mb-1"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 Solution
               </span>
-              <p className="text-warm-gray text-sm leading-relaxed">{project.solution}</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">{project.solution}</p>
             </div>
             <div className="flex items-start gap-2">
               <div className="w-1 h-full min-h-[2rem] bg-gold/40 rounded-full shrink-0 mt-0.5" />
-              <p className="text-soft-white text-sm font-medium">{project.result}</p>
+              <p className="text-foreground text-sm font-medium">{project.result}</p>
             </div>
           </div>
 
@@ -147,7 +147,7 @@ const ProjectCard = ({
             {project.tech.map((t) => (
               <span
                 key={t}
-                className="px-3 py-1 rounded-full text-xs border border-white/10 text-warm-gray bg-jet/50"
+                className="px-3 py-1 rounded-full text-xs border border-white/10 text-muted-foreground bg-background/50"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 {t}

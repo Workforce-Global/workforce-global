@@ -24,7 +24,7 @@ const footerLinks = {
     { label: "Contact Us", href: "#contact" },
     { label: "Start a Project", href: "#contact" },
     { label: "Schedule a Call", href: "#contact" },
-    { label: "hello@workforceglobal.co", href: "mailto:hello@workforceglobal.co" },
+    { label: "connect@workforceglobal.com", href: "mailto:connect@workforceglobal.com" },
   ],
 };
 
@@ -44,7 +44,7 @@ const PremiumFooter = () => {
   };
 
   return (
-    <footer className="bg-graphite border-t border-white/5">
+    <footer className="bg-card border-t border-white/5">
       {/* Main footer content */}
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-16">
         <div className="grid lg:grid-cols-5 gap-10">
@@ -54,18 +54,18 @@ const PremiumFooter = () => {
               onClick={() => scrollTo("#hero")}
               className="flex items-center gap-3 mb-5 group"
             >
-              <img src="./wg_whiteindarkfull-removebg-preview.png" className="w-20 h-20" />
-              <div className="flex flex-col leading-none">
+              <img src="./wg_whiteindarkfull-removebg-preview.png" className="w-auto h-20" />
+              {/* <div className="flex flex-col leading-none">
                 <span
-                  className="text-[10px] font-semibold tracking-[0.2em] uppercase text-soft-white"
+                  className="text-[10px] font-semibold tracking-[0.2em] uppercase text-foreground"
                   style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   WORKFORCE GLOBAL
                 </span>
-              </div>
+              </div>*/ }
             </button>
             <p
-              className="text-xs text-warm-gray leading-relaxed mb-6"
+              className="text-xs text-muted-foreground leading-relaxed mb-6"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Engineering the Future, One Solution at a Time. Based in Accra, Ghana.
@@ -77,7 +77,7 @@ const PremiumFooter = () => {
                 <a
                   key={label}
                   href={href}
-                  className="w-9 h-9 rounded-xl border border-white/8 flex items-center justify-center text-warm-gray hover:text-gold hover:border-gold/30 transition-all duration-300"
+                  className="w-9 h-9 rounded-xl border border-white/8 flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/30 transition-all duration-300"
                   aria-label={label}
                 >
                   <Icon size={15} />
@@ -90,7 +90,7 @@ const PremiumFooter = () => {
           {Object.entries(footerLinks).map(([col, links]) => (
             <div key={col} className="lg:col-span-1">
               <h4
-                className="text-xs font-semibold tracking-[0.15em] uppercase text-soft-white mb-4"
+                className="text-xs font-semibold tracking-[0.15em] uppercase text-foreground mb-4"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 {col}
@@ -126,7 +126,7 @@ const PremiumFooter = () => {
       <div className="border-t border-white/5">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p
-            className="text-xs text-warm-gray"
+            className="text-xs text-muted-foreground"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             © {new Date().getFullYear()} Workforce Global. All rights reserved.

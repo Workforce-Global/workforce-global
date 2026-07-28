@@ -17,7 +17,7 @@ import PremiumFooter from "../components/PremiumFooter";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-jet text-soft-white overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navigation />
       <main>
         <HeroSection />

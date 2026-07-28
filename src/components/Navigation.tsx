@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, Moon, Sun } from "lucide-react";
+import { Menu, X, ChevronDown, Moon, Sun, Monitor } from "lucide-react";
+import { useTheme } from "@/components/theme-provider";
 
 const navItems = [
   { label: "Home", href: "#hero" },
@@ -10,8 +11,6 @@ const navItems = [
     sub: ["Custom Software", "Digital Commerce", "Automation", "Consulting"],
   },
   { label: "Projects", href: "#projects" },
-  { label: "Innovation", href: "#innovation" },
-  { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -20,7 +19,9 @@ const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [progress, setProgress] = useState(0);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+  const { theme, setTheme } = useTheme();
+  
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,16 +34,26 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    if (newMode) {
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
-    } else {
-      document.documentElement.classList.add("light");
-      document.documentElement.classList.remove("dark");
+  useEffect(() => {
+    const updateIsDark = () => {
+      setIsDark(
+        theme === "dark" ||
+        (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
+    };
+    updateIsDark();
+    
+    if (theme === "system") {
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      mediaQuery.addEventListener("change", updateIsDark);
+      return () => mediaQuery.removeEventListener("change", updateIsDark);
     }
+  }, [theme]);
+
+  const cycleTheme = () => {
+    if (theme === "light") setTheme("dark");
+    else if (theme === "dark") setTheme("system");
+    else setTheme("light");
   };
 
   const scrollToSection = (href: string) => {
@@ -64,12 +75,12 @@ const Navigation = () => {
 
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? "bg-jet/95 backdrop-blur-xl border-b border-white/5 shadow-premium-md py-2"
+          ? "bg-background/95 backdrop-blur-xl border-b border-white/5 shadow-premium-md py-2"
           : "bg-transparent py-3"
           }`}
       >
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
-          <div className="flex items-center justify-between h-16 md:h-18">
+          <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <button
               onClick={() => scrollToSection("#hero")}
@@ -78,9 +89,9 @@ const Navigation = () => {
             >
               <div className="transition-transform duration-300 group-hover:scale-105 flex items-center">
                 <img
-                  src={isDarkMode ? "./wg_whiteindarkfull-removebg-preview.png" : "./wg_darkinwhite_full-removebg-preview.png"}
+                  src={isDark ? "./wg_whiteindarkfull-removebg-preview.png" : "./wg_darkinwhite_full-removebg-preview.png"}
                   alt="Workforce Global Logo"
-                  className="h-13 md:h-13 w-auto object-contain max-h-13"
+                  className="h-20 md:h-20 w-auto object-contain"
                 />
               </div>
             </button>
@@ -112,7 +123,7 @@ const Navigation = () => {
                         <button
                           key={s}
                           onClick={() => scrollToSection(item.href)}
-                          className="w-full text-left px-4 py-2.5 text-sm text-warm-gray hover:text-gold hover:bg-white/5 transition-colors"
+                          className="w-full text-left px-4 py-2.5 text-sm text-muted-foreground hover:text-gold hover:bg-white/5 transition-colors"
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
                           {s}
@@ -127,12 +138,14 @@ const Navigation = () => {
             {/* CTA & Controls */}
             <div className="hidden lg:flex items-center gap-4">
               <button
-                onClick={toggleTheme}
-                className="p-2 rounded-full border border-white/10 text-warm-gray hover:text-gold hover:border-gold/40 transition-colors"
-                title={isDarkMode ? "Switch to Light Theme" : "Switch to Dark Theme"}
+                onClick={cycleTheme}
+                className="p-2 rounded-full border border-border text-muted-foreground hover:text-foreground hover:border-border transition-colors"
+                title={`Current Theme: ${theme}`}
                 aria-label="Toggle Theme"
               >
-                {isDarkMode ? <Sun size={16} /> : <Moon size={16} />}
+                {theme === "light" && <Sun size={16} />}
+                {theme === "dark" && <Moon size={16} />}
+                {theme === "system" && <Monitor size={16} />}
               </button>
 
               <button
@@ -145,7 +158,7 @@ const Navigation = () => {
 
             {/* Mobile hamburger */}
             <button
-              className="lg:hidden p-2 text-warm-gray hover:text-soft-white transition-colors"
+              className="lg:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
@@ -165,7 +178,7 @@ const Navigation = () => {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="w-full text-left py-3 px-2 text-base text-warm-gray hover:text-gold border-b border-white/5 transition-colors"
+                className="w-full text-left py-3 px-2 text-base text-muted-foreground hover:text-gold border-b border-white/5 transition-colors"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 {item.label}

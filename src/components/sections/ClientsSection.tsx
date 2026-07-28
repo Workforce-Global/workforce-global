@@ -52,7 +52,7 @@ const ClientsSection = () => {
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({ threshold: 0.05 });
 
   return (
-    <section id="clients" className="py-28 bg-graphite relative overflow-hidden">
+    <section id="clients" className="py-28 bg-card relative overflow-hidden">
       {/* Decorative circle */}
       <div className="absolute -bottom-48 -right-48 w-96 h-96 rounded-full border border-gold/5 pointer-events-none" />
       <div className="absolute -bottom-32 -right-32 w-64 h-64 rounded-full border border-gold/8 pointer-events-none" />
@@ -86,10 +86,10 @@ const ClientsSection = () => {
               <div className="service-icon-wrap mx-auto mb-4">
                 <Icon size={20} className="text-gold" />
               </div>
-              <h3 className="text-base font-bold text-soft-white mb-2 font-manrope">
+              <h3 className="text-base font-bold text-foreground mb-2 font-manrope">
                 {title}
               </h3>
-              <p className="text-xs text-warm-gray leading-relaxed">
+              <p className="text-xs text-muted-foreground leading-relaxed">
                 {description}
               </p>
             </div>

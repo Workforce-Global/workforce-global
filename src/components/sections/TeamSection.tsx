@@ -25,7 +25,7 @@ const TeamSection = () => {
   ];
 
   return (
-    <section id="team" className="py-28 bg-jet relative overflow-hidden">
+    <section id="team" className="py-28 bg-background relative overflow-hidden">
       {/* Decorative gold glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-[0.03] blur-[150px] bg-gold pointer-events-none" />
 
@@ -51,7 +51,7 @@ const TeamSection = () => {
           {team.map((member, i) => (
             <div
               key={member.name}
-              className={`group rounded-3xl overflow-hidden border border-white/6 bg-graphite hover:border-gold/20 transition-all duration-500 ${
+              className={`group rounded-3xl overflow-hidden border border-white/6 bg-card hover:border-gold/20 transition-all duration-500 ${
                 cardsVisible ? "reveal visible" : "reveal"
               }`}
               style={{ transitionDelay: `${i * 150}ms` }}
@@ -78,10 +78,10 @@ const TeamSection = () => {
 
               {/* Content */}
               <div className="p-8">
-                <h3 className="text-2xl font-bold text-soft-white font-manrope mb-3">
+                <h3 className="text-2xl font-bold text-foreground font-manrope mb-3">
                   {member.name}
                 </h3>
-                <p className="text-warm-gray text-sm leading-relaxed mb-6">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                   {member.bio}
                 </p>
 
@@ -90,7 +90,7 @@ const TeamSection = () => {
                   {member.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 rounded-full text-xs border border-white/8 text-warm-gray bg-jet/50"
+                      className="px-3 py-1 rounded-full text-xs border border-white/8 text-muted-foreground bg-background/50"
                       style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                     >
                       {skill}
@@ -102,7 +102,7 @@ const TeamSection = () => {
                 <div className="flex items-center gap-3 pt-4 border-t border-white/5">
                   <a
                     href={member.social.linkedin}
-                    className="text-xs text-warm-gray hover:text-gold flex items-center gap-1.5 transition-colors"
+                    className="text-xs text-muted-foreground hover:text-gold flex items-center gap-1.5 transition-colors"
                     style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                   >
                     LinkedIn
@@ -111,7 +111,7 @@ const TeamSection = () => {
                   <span className="text-white/10">·</span>
                   <a
                     href={member.social.twitter}
-                    className="text-xs text-warm-gray hover:text-gold flex items-center gap-1.5 transition-colors"
+                    className="text-xs text-muted-foreground hover:text-gold flex items-center gap-1.5 transition-colors"
                     style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                   >
                     Twitter
@@ -125,7 +125,7 @@ const TeamSection = () => {
 
         {/* Team CTA */}
         <div className="mt-16 text-center">
-          <p className="text-warm-gray text-sm mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <p className="text-muted-foreground text-sm mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>
             We're growing. Interested in joining the team?
           </p>
           <button

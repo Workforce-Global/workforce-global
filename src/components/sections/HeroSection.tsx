@@ -76,7 +76,7 @@ const HeroSection = () => {
           <div className="flex items-center gap-3 mb-8">
             <span className="section-label">Workforce Global</span>
             <div className="h-px w-12 bg-gold/50" />
-            <span className="text-xs text-warm-gray" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <span className="text-xs text-muted-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               Based in Ghana · Building for the World
             </span>
           </div>
@@ -84,7 +84,7 @@ const HeroSection = () => {
           {/* Headline */}
           <h1
             ref={headlineRef}
-            className="font-manrope text-5xl md:text-6xl lg:text-[5.5rem] xl:text-[6.5rem] font-bold leading-[1.05] text-soft-white mb-8"
+            className="font-manrope text-5xl md:text-6xl lg:text-[5.5rem] xl:text-[6.5rem] font-bold leading-[1.05] text-foreground mb-8"
           >
             Engineering the{" "}
             <span
@@ -104,7 +104,7 @@ const HeroSection = () => {
           {/* Supporting text */}
           <p
             ref={subtextRef}
-            className="text-lg md:text-xl text-warm-gray leading-relaxed mb-10 max-w-2xl"
+            className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Workforce Global partners with startups, businesses, and organizations to design,
@@ -139,7 +139,7 @@ const HeroSection = () => {
               <div key={stat.label} className="flex items-center gap-3">
                 <div>
                   <div className="text-2xl font-bold text-gold font-manrope">{stat.value}</div>
-                  <div className="text-xs text-warm-gray" style={{ fontFamily: "'Inter', sans-serif" }}>
+                  <div className="text-xs text-muted-foreground" style={{ fontFamily: "'Inter', sans-serif" }}>
                     {stat.label}
                   </div>
                 </div>
@@ -153,7 +153,7 @@ const HeroSection = () => {
       {/* Scroll indicator */}
       <button
         onClick={scrollToNext}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-warm-gray hover:text-gold transition-colors group"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-muted-foreground hover:text-gold transition-colors group"
         aria-label="Scroll down"
       >
         <span className="text-xs tracking-widest uppercase" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>

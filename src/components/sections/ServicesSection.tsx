@@ -65,7 +65,7 @@ const ServicesSection = () => {
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({ threshold: 0.05 });
 
   return (
-    <section id="services" className="py-28 bg-graphite relative overflow-hidden">
+    <section id="services" className="py-28 bg-card relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full opacity-[0.03] blur-[120px] bg-gold pointer-events-none" />
 
@@ -106,7 +106,7 @@ const ServicesSection = () => {
                   </div>
                   <ArrowUpRight
                     size={18}
-                    className={`text-warm-gray transition-all duration-300 ${
+                    className={`text-muted-foreground transition-all duration-300 ${
                       hoveredCard === i ? "text-gold translate-x-0.5 -translate-y-0.5" : ""
                     }`}
                   />
@@ -114,11 +114,11 @@ const ServicesSection = () => {
 
                 {/* Category + description */}
                 <h3
-                  className="text-xl font-bold text-soft-white mb-3 font-manrope"
+                  className="text-xl font-bold text-foreground mb-3 font-manrope"
                 >
                   {service.category}
                 </h3>
-                <p className="text-warm-gray text-sm leading-relaxed mb-6">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                   {service.description}
                 </p>
 
@@ -129,11 +129,11 @@ const ServicesSection = () => {
                     return (
                       <div
                         key={item}
-                        className="flex items-center gap-2 p-2.5 rounded-xl bg-jet/50 border border-white/5 group-hover:border-gold/15 transition-colors"
+                        className="flex items-center gap-2 p-2.5 rounded-xl bg-background/50 border border-white/5 group-hover:border-gold/15 transition-colors"
                       >
                         <SubIcon size={12} className="text-gold/60 shrink-0" />
                         <span
-                          className="text-xs text-warm-gray"
+                          className="text-xs text-muted-foreground"
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
                           {item}

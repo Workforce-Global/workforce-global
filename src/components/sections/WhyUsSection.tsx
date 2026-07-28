@@ -42,7 +42,7 @@ const CounterStat = ({
         {suffix}
       </div>
       <p
-        className="text-warm-gray text-sm mt-2"
+        className="text-muted-foreground text-sm mt-2"
         style={{ fontFamily: "'Inter', sans-serif" }}
       >
         {label}
@@ -56,7 +56,7 @@ const WhyUsSection = () => {
   const { ref: valuesRef, isVisible: valuesVisible } = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <section id="why-us" className="py-28 bg-graphite relative overflow-hidden">
+    <section id="why-us" className="py-28 bg-card relative overflow-hidden">
       {/* Decorative */}
       <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-gold/10 to-transparent pointer-events-none" />
 
@@ -77,7 +77,7 @@ const WhyUsSection = () => {
         {/* Stats bar */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-3xl overflow-hidden mb-20">
           {stats.map((stat) => (
-            <div key={stat.label} className="bg-graphite">
+            <div key={stat.label} className="bg-card">
               <CounterStat {...stat} />
             </div>
           ))}
@@ -98,7 +98,7 @@ const WhyUsSection = () => {
             >
               <CheckCircle2 size={18} className="text-gold shrink-0 mt-0.5" />
               <span
-                className="text-soft-white text-sm leading-relaxed"
+                className="text-foreground text-sm leading-relaxed"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {v}
@@ -108,14 +108,14 @@ const WhyUsSection = () => {
         </div>
 
         {/* Bottom CTA banner */}
-        <div className="mt-20 rounded-3xl p-10 bg-jet border border-gold/15 text-center relative overflow-hidden">
+        <div className="mt-20 rounded-3xl p-10 bg-background border border-gold/15 text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.04]"
             style={{
               backgroundImage: "radial-gradient(ellipse at center, #C6A15B 0%, transparent 70%)",
             }}
           />
           <p className="section-label mb-3">Ready to get started?</p>
-          <h3 className="text-3xl md:text-4xl font-bold text-soft-white font-manrope mb-4">
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground font-manrope mb-4">
             Let's Build Something That Matters
           </h3>
           <button

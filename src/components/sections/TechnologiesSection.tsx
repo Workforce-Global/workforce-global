@@ -38,7 +38,7 @@ const TechnologiesSection = () => {
       : technologies.filter((t) => t.category === activeCategory);
 
   return (
-    <section id="technologies" className="py-28 bg-jet relative overflow-hidden">
+    <section id="technologies" className="py-28 bg-background relative overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         {/* Header */}
         <div
@@ -63,7 +63,7 @@ const TechnologiesSection = () => {
               className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
                 activeCategory === cat
                   ? "bg-gold text-jet"
-                  : "bg-graphite border border-white/8 text-warm-gray hover:border-gold/30 hover:text-soft-white"
+                  : "bg-card border border-white/8 text-muted-foreground hover:border-gold/30 hover:text-foreground"
               }`}
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
@@ -92,7 +92,7 @@ const TechnologiesSection = () => {
               </div>
               {/* Name */}
               <span
-                className="text-xs font-semibold text-soft-white text-center"
+                className="text-xs font-semibold text-foreground text-center"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 {tech.name}

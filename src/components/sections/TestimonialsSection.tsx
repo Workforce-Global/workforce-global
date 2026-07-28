@@ -65,7 +65,7 @@ const TestimonialsSection = () => {
   }, [autoPlay, next]);
 
   return (
-    <section id="testimonials" className="py-28 bg-graphite relative overflow-hidden">
+    <section id="testimonials" className="py-28 bg-card relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-[0.035] blur-[120px] bg-gold pointer-events-none" />
 
@@ -104,7 +104,7 @@ const TestimonialsSection = () => {
 
             {/* Quote */}
             <blockquote
-              className="text-xl md:text-2xl text-soft-white leading-relaxed font-manrope font-medium mb-8"
+              className="text-xl md:text-2xl text-foreground leading-relaxed font-manrope font-medium mb-8"
               style={{ fontStyle: "normal" }}
             >
               "{testimonials[current].quote}"
@@ -120,11 +120,11 @@ const TestimonialsSection = () => {
                 {testimonials[current].avatar}
               </div>
               <div>
-                <div className="font-semibold text-soft-white font-manrope">
+                <div className="font-semibold text-foreground font-manrope">
                   {testimonials[current].name}
                 </div>
                 <div
-                  className="text-xs text-warm-gray"
+                  className="text-xs text-muted-foreground"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   {testimonials[current].position} · {testimonials[current].company}
@@ -153,14 +153,14 @@ const TestimonialsSection = () => {
             <div className="flex gap-3">
               <button
                 onClick={prev}
-                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-warm-gray hover:border-gold/30 hover:text-gold transition-all duration-300"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:border-gold/30 hover:text-gold transition-all duration-300"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft size={18} />
               </button>
               <button
                 onClick={next}
-                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-warm-gray hover:border-gold/30 hover:text-gold transition-all duration-300"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-muted-foreground hover:border-gold/30 hover:text-gold transition-all duration-300"
                 aria-label="Next testimonial"
               >
                 <ChevronRight size={18} />

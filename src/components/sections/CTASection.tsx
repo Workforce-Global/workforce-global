@@ -5,7 +5,7 @@ const CTASection = () => {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
 
   return (
-    <section id="cta" className="py-28 bg-graphite relative overflow-hidden">
+    <section id="cta" className="py-28 bg-card relative overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <img
