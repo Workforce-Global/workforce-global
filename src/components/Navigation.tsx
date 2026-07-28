@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Moon, Sun, Monitor } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const navItems = [
   { label: "Home", href: "#hero" },
@@ -11,6 +12,7 @@ const navItems = [
     sub: ["Custom Software", "Digital Commerce", "Automation", "Consulting"],
   },
   { label: "Projects", href: "#projects" },
+  { label: "Team", href: "/team" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -20,6 +22,8 @@ const Navigation = () => {
   const [progress, setProgress] = useState(0);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { theme, setTheme } = useTheme();
+  const navigate = useNavigate();
+  const location = useLocation();
   
   const [isDark, setIsDark] = useState(true);
 
@@ -59,6 +63,20 @@ const Navigation = () => {
   const scrollToSection = (href: string) => {
     setMenuOpen(false);
     setActiveDropdown(null);
+    // External route (starts with /)
+    if (href.startsWith("/")) {
+      navigate(href);
+      return;
+    }
+    // If we're not on the homepage, navigate home first then scroll
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+      return;
+    }
     const el = document.querySelector(href);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });

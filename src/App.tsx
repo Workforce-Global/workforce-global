@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LoadingProvider } from "@/hooks/useLoading";
 import { ThemeProvider } from "@/components/theme-provider";
 import Index from "./pages/Index";
+import OrganisationStructure from "./pages/OrganisationStructure";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App: React.FC = () => {
               <BrowserRouter>
                 <Routes>
                   <Route path="/" element={<Index />} />
+                  <Route path="/team" element={<OrganisationStructure />} />
                   {/* All content is on the homepage as a single-page experience */}
                   <Route path="*" element={<Index />} />
                 </Routes>
