@@ -14,28 +14,61 @@ import TeamSection from "../components/sections/TeamSection";
 import CTASection from "../components/sections/CTASection";
 import ContactSection from "../components/sections/ContactSection";
 import PremiumFooter from "../components/PremiumFooter";
+import SectionGuard from "../components/SectionGuard";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <Navigation />
+      <SectionGuard section="header">
+        <Navigation />
+      </SectionGuard>
       <main>
-        <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <ProjectsSection />
-        <ClientsSection />
-        <InnovationSection />
-        <ProcessSection />
-        <TechnologiesSection />
-        <WhyUsSection />
-        <GlobalSection />
-        <TestimonialsSection />
-        <TeamSection />
-        <CTASection />
-        <ContactSection />
+        <SectionGuard section="hero">
+          <HeroSection />
+        </SectionGuard>
+        <SectionGuard section="about">
+          <AboutSection />
+        </SectionGuard>
+        <SectionGuard section="services">
+          <ServicesSection />
+        </SectionGuard>
+        <SectionGuard section="projects">
+          <ProjectsSection />
+        </SectionGuard>
+        <SectionGuard section="clients">
+          <ClientsSection />
+        </SectionGuard>
+        <SectionGuard section="innovation">
+          <InnovationSection />
+        </SectionGuard>
+        <SectionGuard section="process">
+          <ProcessSection />
+        </SectionGuard>
+        <SectionGuard section="technologies">
+          <TechnologiesSection />
+        </SectionGuard>
+        <SectionGuard section="whyus">
+          <WhyUsSection />
+        </SectionGuard>
+        <SectionGuard section="global">
+          <GlobalSection />
+        </SectionGuard>
+        <SectionGuard section="testimonials">
+          <TestimonialsSection />
+        </SectionGuard>
+        <SectionGuard section="team">
+          <TeamSection />
+        </SectionGuard>
+        <SectionGuard section="cta">
+          <CTASection />
+        </SectionGuard>
+        <SectionGuard section="contact">
+          <ContactSection />
+        </SectionGuard>
       </main>
-      <PremiumFooter />
+      <SectionGuard section="footer">
+        <PremiumFooter />
+      </SectionGuard>
     </div>
   );
 };
