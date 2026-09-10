@@ -9,20 +9,20 @@ interface Tech {
 }
 
 const technologies: Tech[] = [
-  { name: "React", category: "Frontend", description: "Component-based UI library for modern web apps", icon: "⚛" },
-  { name: "Next.js", category: "Frontend", description: "Full-stack React framework with SSR & SSG", icon: "▲" },
-  { name: "TypeScript", category: "Language", description: "Statically typed JavaScript for safer code", icon: "TS" },
-  { name: "Node.js", category: "Backend", description: "JavaScript runtime for scalable server-side apps", icon: "⬡" },
-  { name: "Python", category: "Backend", description: "Versatile language for APIs, data, and AI", icon: "🐍" },
-  { name: "Flutter", category: "Mobile", description: "Cross-platform mobile development from Google", icon: "◎" },
-  { name: "Angular", category: "Frontend", description: "Enterprise-ready web application framework", icon: "🅐" },
-  { name: "PostgreSQL", category: "Database", description: "Advanced open-source relational database", icon: "🐘" },
-  { name: "Firebase", category: "Platform", description: "Google's app development platform", icon: "🔥" },
-  { name: "Supabase", category: "Database", description: "Open-source Firebase alternative on Postgres", icon: "⚡" },
-  { name: "Docker", category: "DevOps", description: "Containerization for consistent deployments", icon: "🐳" },
-  { name: "AWS", category: "Cloud", description: "Amazon's cloud infrastructure platform", icon: "☁" },
-  { name: "Figma", category: "Design", description: "Collaborative interface design and prototyping", icon: "✦" },
-  { name: "AI / LLMs", category: "AI", description: "Large language models and AI integrations", icon: "🤖" },
+  { name: "React", category: "Frontend", description: "Component-based UI library for modern web apps", icon: "/react-logo.png" },
+  { name: "Next.js", category: "Frontend", description: "Full-stack React framework with SSR & SSG", icon: "/nextjs-logo.png" },
+  { name: "TypeScript", category: "Language", description: "Statically typed JavaScript for safer code", icon: "/typescript-logo.png" },
+  { name: "Node.js", category: "Backend", description: "JavaScript runtime for scalable server-side apps", icon: "/node-js-logo.png" },
+  { name: "Python", category: "Backend", description: "Versatile language for APIs, data, and AI", icon: "/python-logo.png" },
+  { name: "Flutter", category: "Mobile", description: "Cross-platform mobile development from Google", icon: "/flutter.svg" },
+  { name: "Angular", category: "Frontend", description: "Enterprise-ready web application framework", icon: "/angular-logo.png" },
+  { name: "PostgreSQL", category: "Database", description: "Advanced open-source relational database", icon: "/postgresql-logo.png" },
+  { name: "Firebase", category: "Platform", description: "Google's app development platform", icon: "/firebase-logo.png" },
+  { name: "Supabase", category: "Database", description: "Open-source Firebase alternative on Postgres", icon: "/supabase-logo.png" },
+  { name: "Docker", category: "DevOps", description: "Containerization for consistent deployments", icon: "/docker-logo.png" },
+  { name: "AWS", category: "Cloud", description: "Amazon's cloud infrastructure platform", icon: "/aws-logo.png" },
+  { name: "Figma", category: "Design", description: "Collaborative interface design and prototyping", icon: "/figma-logo.png" },
+  { name: "AI / LLMs", category: "AI", description: "Large language models and AI integrations", icon: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=256&q=80&auto=format&fit=crop" },
 ];
 
 const categories = ["All", "Frontend", "Backend", "Mobile", "Database", "Cloud", "DevOps", "Design", "AI", "Language", "Platform"];
@@ -90,7 +90,7 @@ const TechnologiesSection = () => {
                   className="text-2xl mb-2 leading-none select-none"
                   aria-hidden="true"
                 >
-                  {tech.icon}
+                  <img src={tech.icon} alt={`${tech.name} logo`} className="h-10 w-10 object-contain" />
                 </div>
                 {/* Name */}
                 <span
