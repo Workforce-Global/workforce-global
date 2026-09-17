@@ -204,6 +204,17 @@ const Navigation = () => {
             ))}
             <div className="pt-4 flex flex-col gap-3">
               <button
+                onClick={cycleTheme}
+                className="flex w-full items-center justify-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:border-border transition-colors"
+                title={`Current Theme: ${theme}`}
+                aria-label="Toggle Theme"
+              >
+                {theme === "light" && <Sun size={16} />}
+                {theme === "dark" && <Moon size={16} />}
+                {theme === "system" && <Monitor size={16} />}
+                <span>{theme === "system" ? "System theme" : `${theme[0].toUpperCase()}${theme.slice(1)} theme`}</span>
+              </button>
+              <button
                 onClick={() => scrollToSection("#contact")}
                 className="btn-secondary w-full justify-center"
               >

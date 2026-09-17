@@ -1,10 +1,30 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
+import { useTheme } from "@/components/theme-provider";
 
 const HeroSection = () => {
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subtextRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const updateIsDark = () => {
+      setIsDark(
+        theme === "dark" ||
+        (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
+    };
+
+    updateIsDark();
+
+    if (theme === "system") {
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      mediaQuery.addEventListener("change", updateIsDark);
+      return () => mediaQuery.removeEventListener("change", updateIsDark);
+    }
+  }, [theme]);
 
   useEffect(() => {
     const els = [headlineRef.current, subtextRef.current, ctaRef.current];
@@ -44,15 +64,27 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1920&q=85&auto=format&fit=crop"
-          alt="Innovation and technology"
+          src={isDark
+            ? "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=85&auto=format&fit=crop"
+            : "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920&q=85&auto=format&fit=crop"}
+          alt={isDark ? "Close-up of a computer circuit board" : "Bright modern technology workspace"}
           className="w-full h-full object-cover object-center"
           loading="eager"
         />
-        {/* Dark overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-jet/85 via-jet/75 to-jet/90" />
-        {/* Subtle gold vignette at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-jet to-transparent" />
+        {/* Overlay gradient */}
+        <div
+          className={`absolute inset-0 ${
+            isDark
+              ? "bg-gradient-to-b from-jet/90 via-jet/80 to-jet/95"
+              : "bg-gradient-to-b from-soft-white/95 via-soft-white/85 to-soft-white/95"
+          }`}
+        />
+        {/* Subtle vignette at bottom */}
+        <div
+          className={`absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t ${
+            isDark ? "from-jet to-transparent" : "from-soft-white to-transparent"
+          }`}
+        />
       </div>
 
       {/* Floating geometric shapes (logo-inspired) */}
@@ -90,10 +122,7 @@ const HeroSection = () => {
             <span
               className="relative inline-block"
               style={{
-                background: "linear-gradient(135deg, #D4B57A, #C6A15B, #9E7B3D)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
+                color: isDark ? "#C6A15B" : "#7A5B28",
               }}
             >
               Future
@@ -138,12 +167,12 @@ const HeroSection = () => {
             ].map((stat) => (
               <div key={stat.label} className="flex items-center gap-3">
                 <div>
-                  <div className="text-2xl font-bold text-gold font-manrope">{stat.value}</div>
+                  <div className={`text-2xl font-bold font-manrope ${isDark ? "text-gold" : "text-[#7A5B28]"}`}>{stat.value}</div>
                   <div className="text-xs text-muted-foreground" style={{ fontFamily: "'Inter', sans-serif" }}>
                     {stat.label}
                   </div>
                 </div>
-                <div className="h-8 w-px bg-white/10 last:hidden" />
+                <div className={`h-8 w-px ${isDark ? "bg-white/10" : "bg-jet/15"} last:hidden`} />
               </div>
             ))}
           </div>
@@ -153,13 +182,13 @@ const HeroSection = () => {
       {/* Scroll indicator */}
       <button
         onClick={scrollToNext}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-muted-foreground hover:text-gold transition-colors group"
+        className={`absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-muted-foreground ${isDark ? "hover:text-gold" : "hover:text-[#7A5B28]"} transition-colors group`}
         aria-label="Scroll down"
       >
         <span className="text-xs tracking-widest uppercase" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           Scroll
         </span>
-        <ChevronDown size={18} className="animate-bounce group-hover:text-gold" />
+        <ChevronDown size={18} className={`animate-bounce ${isDark ? "group-hover:text-gold" : "group-hover:text-[#7A5B28]"}`} />
       </button>
     </section>
   );

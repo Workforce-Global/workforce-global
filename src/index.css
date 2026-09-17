@@ -199,6 +199,40 @@
 }
 
 /* ============================
+   HERO CONTRAST OVERRIDES (WCAG)
+   Light mode defaults, .dark restores brand gold
+   ============================ */
+#hero .btn-primary:hover {
+  border-color: #7A5B28;
+}
+
+.dark #hero .btn-primary:hover {
+  border-color: var(--color-gold);
+}
+
+#hero .btn-secondary {
+  color: #7A5B28;
+  border-color: #7A5B28;
+}
+
+#hero .btn-secondary:hover {
+  background: #7A5B28;
+  color: #F8F8F6;
+  border-color: #7A5B28;
+}
+
+.dark #hero .btn-secondary,
+.dark #hero .btn-secondary:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+.dark #hero .btn-secondary:hover {
+  background: var(--color-gold);
+  color: #0B0B0B;
+}
+
+/* ============================
    CARDS & GLASS EFFECTS
    ============================ */
 .glass-panel {
