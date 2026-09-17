@@ -5,40 +5,40 @@ import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Workforce Global didn't just build us a platform — they became an extension of our team. Their technical depth and attention to detail is world-class. We launched in half the time we expected.",
+      "The opportunity gave me a real problem to work on, a team to learn with, and feedback I could use immediately. I left with more confidence and a clearer direction.",
     name: "Ama Boateng",
-    company: "FinStart Ghana",
-    position: "Founder & CEO",
+    company: "Workforce Global Community",
+    position: "Opportunity Participant",
     rating: 5,
     avatar: "AB",
     bg: "from-gold/10 to-transparent",
   },
   {
     quote:
-      "The hackathon they organized for us uncovered 3 solutions we're now actively developing. Workforce Global brings a level of creativity and execution that is rare to find in any market.",
+      "The challenge helped us discover three strong ideas while giving participants a supportive place to practice collaboration and presenting their work.",
     name: "David Mensah",
-    company: "Kofi Foundation",
-    position: "Program Director",
+    company: "Community Partner",
+    position: "Program Facilitator",
     rating: 5,
     avatar: "DM",
     bg: "from-blue-900/20 to-transparent",
   },
   {
     quote:
-      "We came with a rough idea and they delivered a polished, scalable product. The team is communicative, fast, and genuinely invested in your success. Highly recommend.",
+      "I came in with a rough idea and left with a tested prototype, useful feedback, and new collaborators. The process made learning feel active and possible.",
     name: "Sarah Osei",
-    company: "AgriVentures Ltd",
-    position: "COO",
+    company: "Learning Community",
+    position: "Participant",
     rating: 5,
     avatar: "SO",
     bg: "from-emerald-900/20 to-transparent",
   },
   {
     quote:
-      "Our student program is now serving over 4,000 learners across 6 campuses. The platform is robust, beautiful, and our students love it. Workforce Global exceeded every expectation.",
+      "The program gave learners a practical way to build, reflect, and share their work. It created momentum that continued well beyond the final session.",
     name: "Prof. Kwame Asante",
-    company: "University of Ghana",
-    position: "Director of Innovation",
+    company: "University Community",
+    position: "Learning Program Partner",
     rating: 5,
     avatar: "KA",
     bg: "from-purple-900/20 to-transparent",
@@ -75,9 +75,9 @@ const TestimonialsSection = () => {
           ref={headerRef as React.RefObject<HTMLDivElement>}
           className={`reveal ${headerVisible ? "visible" : ""} mb-16 text-center max-w-2xl mx-auto`}
         >
-          <span className="section-label block mb-4">Client Stories</span>
+          <span className="section-label block mb-4">Community Voices</span>
           <div className="gold-line mx-auto" />
-          <h2 className="section-heading mb-5">What Our Clients Say</h2>
+          <h2 className="section-heading mb-5">What People Gain From Participating</h2>
         </div>
 
         {/* Carousel */}

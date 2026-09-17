@@ -2,14 +2,13 @@ import { useState } from "react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
 
-const services = [
-  "Custom Software Development",
-  "Mobile App Development",
-  "Digital Commerce",
-  "AI & Automation",
-  "Product Strategy & Consulting",
-  "Innovation Programs / Hackathons",
-  "UI/UX Design",
+const participationOptions = [
+  "Join a learning opportunity",
+  "Find a mentor",
+  "Bring a real-world challenge",
+  "Volunteer or facilitate",
+  "Partner on a community program",
+  "Share an idea",
   "Other",
 ];
 
@@ -60,7 +59,7 @@ const ContactSection = () => {
           <div className="gold-line mx-auto" />
           <h2 className="section-heading mb-5">Start the Conversation</h2>
           <p className="section-subheading mx-auto text-center">
-            Tell us about your project. We'll get back to you within 24 hours.
+            Tell us what you want to learn, contribute, or explore. We'll get back to you within 24 hours.
           </p>
         </div>
 
@@ -98,7 +97,7 @@ const ContactSection = () => {
                   },
                   {
                     icon: Clock,
-                    label: "Business Hours",
+                    label: "Community Hours",
                     value: "Mon–Fri, 8AM – 6PM GMT",
                     href: undefined,
                   },
@@ -204,7 +203,7 @@ const ContactSection = () => {
                       required
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="john@company.com"
+                      placeholder="john@example.com"
                       className="input-premium"
                     />
                   </div>
@@ -216,7 +215,7 @@ const ContactSection = () => {
                     htmlFor="contact-company"
                     style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                   >
-                    Company / Organization
+                    Organisation or Community (optional)
                   </label>
                   <input
                     id="contact-company"
@@ -224,7 +223,7 @@ const ContactSection = () => {
                     type="text"
                     value={form.company}
                     onChange={handleChange}
-                    placeholder="Your Company"
+                    placeholder="Your organisation"
                     className="input-premium"
                   />
                 </div>
@@ -235,7 +234,7 @@ const ContactSection = () => {
                     htmlFor="contact-service"
                     style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                   >
-                    Service You're Interested In
+                    How Would You Like to Participate?
                   </label>
                   <select
                     id="contact-service"
@@ -245,8 +244,8 @@ const ContactSection = () => {
                     className="input-premium appearance-none cursor-pointer"
                     style={{ background: "rgba(255,255,255,0.04)" }}
                   >
-                    <option value="" style={{ background: "#1A1A1A" }}>Select a service...</option>
-                    {services.map((s) => (
+                    <option value="" style={{ background: "#1A1A1A" }}>Select an option...</option>
+                    {participationOptions.map((s) => (
                       <option key={s} value={s} style={{ background: "#1A1A1A" }}>
                         {s}
                       </option>
@@ -260,7 +259,7 @@ const ContactSection = () => {
                     htmlFor="contact-message"
                     style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                   >
-                    Tell Us About Your Project *
+                    Tell Us What You Want to Explore *
                   </label>
                   <textarea
                     id="contact-message"
@@ -269,7 +268,7 @@ const ContactSection = () => {
                     rows={5}
                     value={form.message}
                     onChange={handleChange}
-                    placeholder="Describe your project, goals, and timeline..."
+                    placeholder="Tell us about your interests, skills, challenge, or learning goals..."
                     className="input-premium resize-none"
                   />
                 </div>

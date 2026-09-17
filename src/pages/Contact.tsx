@@ -107,7 +107,7 @@ const Contact = () => {
                     </label>
                     <Textarea
                       id="message"
-                      placeholder="Tell us about your project..."
+                      placeholder="Tell us what you want to learn, contribute, or explore..."
                       className="min-h-[150px]"
                       {...register("message", { required: true })}
                     />
@@ -130,7 +130,7 @@ const Contact = () => {
                     Contact Information
                   </h2>
                   <p className="text-muted-foreground mb-8">
-                    Have a project in mind? Want to collaborate? Or just want to
+                    Have an opportunity in mind? Want to collaborate? Or just want to
                     say hi? We'd love to hear from you!
                   </p>
                 </div>

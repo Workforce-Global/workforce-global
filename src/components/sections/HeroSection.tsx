@@ -118,16 +118,16 @@ const HeroSection = () => {
             ref={headlineRef}
             className="font-manrope text-5xl md:text-6xl lg:text-[5.5rem] xl:text-[6.5rem] font-bold leading-[1.05] text-foreground mb-8"
           >
-            Engineering the{" "}
+            Learn by{" "}
             <span
               className="relative inline-block"
               style={{
                 color: isDark ? "#C6A15B" : "#7A5B28",
               }}
             >
-              Future
+              Doing
             </span>
-            ,<br className="hidden md:block" /> One Solution at a Time.
+            .<br className="hidden md:block" /> Grow Through Real Opportunities.
           </h1>
 
           {/* Supporting text */}
@@ -136,9 +136,9 @@ const HeroSection = () => {
             className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Workforce Global partners with startups, businesses, and organizations to design,
-            build, and scale software products, digital experiences, and innovation initiatives
-            that create lasting impact.
+            Workforce Global is a community where people learn by doing through real-world
+            challenges, collaboration, mentorship, and practical opportunities that build
+            confidence, skills, and experience.
           </p>
 
           {/* CTAs */}
@@ -147,23 +147,23 @@ const HeroSection = () => {
               onClick={scrollToContact}
               className="btn-primary group"
             >
-              <span>Start Your Project</span>
+              <span>Find an Opportunity</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </button>
             <button
               onClick={scrollToProjects}
               className="btn-secondary"
             >
-              Explore Our Work
+              See How It Works
             </button>
           </div>
 
           {/* Social proof strip */}
           <div className="mt-16 flex items-center gap-6 flex-wrap">
             {[
-              { label: "Projects Delivered", value: "50+" },
-              { label: "Countries Reached", value: "12+" },
-              { label: "Innovation Programs", value: "20+" },
+              { label: "Learning Opportunities", value: "50+" },
+              { label: "Countries Connected", value: "12+" },
+              { label: "People In Our Community", value: "200K+" },
             ].map((stat) => (
               <div key={stat.label} className="flex items-center gap-3">
                 <div>

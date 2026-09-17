@@ -4,12 +4,12 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
     name: "FinTrack Pro",
-    industry: "FinTech",
+    industry: "Team Challenge",
     challenge:
-      "A pan-African microfinance institution needed a digital platform to serve 200,000+ customers who had never used mobile banking.",
+      "How might we make essential financial tools easier to understand and access for people using mobile devices for the first time?",
     solution:
-      "We designed and built a USSD + mobile-first fintech platform with multilingual support, offline-capable transactions, and seamless KYC onboarding.",
-    result: "200K+ users onboarded in 6 months. 40% reduction in customer support costs.",
+      "Participants research the context, sketch a service, and build a mobile-first prototype with guidance from peers and mentors.",
+    result: "Practice user research, product thinking, prototyping, and presenting your work.",
     tech: ["React Native", "Node.js", "PostgreSQL", "AWS", "Firebase"],
     image:
       "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900&q=80&auto=format&fit=crop",
@@ -17,12 +17,12 @@ const projects = [
   },
   {
     name: "AgriConnect Platform",
-    industry: "AgriTech",
+    industry: "Community Challenge",
     challenge:
-      "Smallholder farmers across West Africa lacked access to real-time market prices, weather data, and agricultural inputs.",
+      "Explore the information and collaboration barriers faced by smallholder farmers across West Africa.",
     solution:
-      "A multilingual PWA connecting farmers to buyers, agronomists, and input suppliers — with AI-driven crop advisory and mobile money integration.",
-    result: "12,000 farmers served. 30% increase in average income reported.",
+      "Work in a cross-disciplinary team to map the problem, test assumptions, and create a useful digital concept.",
+    result: "Gain experience in collaboration, research, systems thinking, and responsible design.",
     tech: ["Next.js", "Python", "Supabase", "Docker", "Figma"],
     image:
       "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=900&q=80&auto=format&fit=crop",
@@ -30,12 +30,12 @@ const projects = [
   },
   {
     name: "EduHub LMS",
-    industry: "EdTech",
+    industry: "Learning Build",
     challenge:
-      "A university consortium needed a scalable, branded LMS to manage 50,000 students across 8 campuses with offline learning support.",
+      "Design a more accessible learning experience for a diverse community of students and mentors.",
     solution:
-      "Custom learning management system with adaptive content delivery, offline sync, live classes, and detailed analytics dashboards.",
-    result: "98% uptime. Course completion rates improved by 55%.",
+      "Build and test a small learning experience with feedback from real participants and an experienced facilitator.",
+    result: "Leave with a portfolio piece, feedback, and a clearer sense of what to learn next.",
     tech: ["React", "TypeScript", "Node.js", "Firebase", "Flutter"],
     image:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&q=80&auto=format&fit=crop",
@@ -54,12 +54,12 @@ const ProjectsSection = () => {
           ref={headerRef as React.RefObject<HTMLDivElement>}
           className={`reveal ${headerVisible ? "visible" : ""} mb-20`}
         >
-          <span className="section-label block mb-4">Case Studies</span>
+          <span className="section-label block mb-4">Learning Opportunities</span>
           <div className="gold-line" />
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-            <h2 className="section-heading max-w-xl">Featured Projects</h2>
+            <h2 className="section-heading max-w-xl">Opportunities to Learn by Doing</h2>
             <p className="section-subheading lg:max-w-sm">
-              Real challenges. Thoughtful solutions. Measurable results.
+              Join a practical experience, work with others, and leave with skills you can show.
             </p>
           </div>
         </div>
@@ -103,7 +103,7 @@ const ProjectCard = ({
           className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
         />
         <div className={`absolute inset-0 bg-gradient-to-r ${isEven ? project.color : project.color.replace("from-", "from-r-")} to-transparent`} />
-        {/* Industry badge */}
+                {/* Opportunity format badge */}
         <div className="absolute top-5 left-5">
           <span
             className="px-3 py-1.5 rounded-full text-xs font-semibold border border-gold/40 text-gold"
@@ -125,14 +125,14 @@ const ProjectCard = ({
             <div>
               <span className="text-xs text-gold font-semibold uppercase tracking-wider block mb-1"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                Challenge
+                The Challenge
               </span>
               <p className="text-muted-foreground text-sm leading-relaxed">{project.challenge}</p>
             </div>
             <div>
               <span className="text-xs text-gold font-semibold uppercase tracking-wider block mb-1"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                Solution
+                What You Will Do
               </span>
               <p className="text-muted-foreground text-sm leading-relaxed">{project.solution}</p>
             </div>
@@ -160,7 +160,7 @@ const ProjectCard = ({
         <div className="mt-6 pt-5 border-t border-white/5">
           <button className="flex items-center gap-2 text-sm text-gold hover:text-gold-light transition-colors"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            View Case Study
+            Join This Opportunity
             <ArrowUpRight size={15} />
           </button>
         </div>

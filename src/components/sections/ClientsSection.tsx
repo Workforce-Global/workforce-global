@@ -7,43 +7,43 @@ import {
 const clients = [
   {
     icon: Rocket,
-    title: "Startups",
-    description: "We help founders move from idea to MVP and beyond — fast.",
+    title: "Curious Beginners",
+    description: "Start with a welcoming challenge and learn alongside people at a similar stage.",
   },
   {
     icon: Building2,
-    title: "SMEs",
-    description: "Digital tools and automation that keep growing businesses competitive.",
+    title: "Emerging Practitioners",
+    description: "Strengthen your existing skills through meaningful briefs and feedback.",
   },
   {
     icon: Globe,
-    title: "Enterprises",
-    description: "Scalable, secure enterprise-grade software for large organizations.",
+    title: "Experienced Builders",
+    description: "Share what you know, lead a workstream, and support the next wave of talent.",
   },
   {
     icon: Heart,
-    title: "NGOs",
-    description: "Technology for social impact — built for mission-driven organizations.",
+    title: "Mentors",
+    description: "Guide learners with practical insight, thoughtful feedback, and encouragement.",
   },
   {
     icon: GraduationCap,
-    title: "Universities",
-    description: "Learning platforms, research tools, and campus management systems.",
+    title: "Students",
+    description: "Build confidence and portfolio evidence before your first or next role.",
   },
   {
     icon: Landmark,
-    title: "Government",
-    description: "Civic tech and e-government solutions built for scale and transparency.",
+    title: "Community Partners",
+    description: "Bring a real challenge that gives people a useful place to practice.",
   },
   {
     icon: Banknote,
-    title: "Financial Institutions",
-    description: "Fintech platforms, core banking integrations, and digital wallets.",
+    title: "Career Explorers",
+    description: "Try different roles and discover the kinds of problems you want to solve.",
   },
   {
     icon: Stethoscope,
-    title: "Healthcare",
-    description: "Health informatics, telemedicine, and patient management systems.",
+    title: "Collaborative Teams",
+    description: "Meet people across disciplines and learn how strong teams make progress together.",
   },
 ];
 
@@ -63,12 +63,12 @@ const ClientsSection = () => {
           ref={headerRef as React.RefObject<HTMLDivElement>}
           className={`reveal ${headerVisible ? "visible" : ""} mb-20 text-center max-w-2xl mx-auto`}
         >
-          <span className="section-label block mb-4">Who We Serve</span>
+          <span className="section-label block mb-4">Our Community</span>
           <div className="gold-line mx-auto" />
-          <h2 className="section-heading mb-5">Who We Work With</h2>
+          <h2 className="section-heading mb-5">There Is a Place for You Here</h2>
           <p className="section-subheading mx-auto text-center">
-            From early-stage startups to international institutions — we partner with
-            organizations of every scale and sector.
+            Whether you are starting out, building experience, or ready to mentor, you can
+            find a meaningful way to participate.
           </p>
         </div>
 

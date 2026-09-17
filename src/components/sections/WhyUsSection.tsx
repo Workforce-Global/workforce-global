@@ -3,23 +3,23 @@ import { useCounter } from "../../hooks/useCounter";
 import { CheckCircle2 } from "lucide-react";
 
 const stats = [
-  { value: 50, suffix: "+", label: "Projects Delivered" },
-  { value: 12, suffix: "+", label: "Countries Reached" },
-  { value: 200, suffix: "K+", label: "End Users Served" },
-  { value: 97, suffix: "%", label: "Client Satisfaction" },
+  { value: 50, suffix: "+", label: "Learning Opportunities" },
+  { value: 12, suffix: "+", label: "Countries Connected" },
+  { value: 200, suffix: "K+", label: "People Reached" },
+  { value: 97, suffix: "%", label: "Participant Confidence" },
 ];
 
 const values = [
-  "Innovative solutions built from the ground up",
-  "End-to-end product development",
-  "Agile delivery with full transparency",
-  "Cross-functional engineering teams",
-  "User-centered design at every stage",
-  "Modern, maintainable technology stack",
-  "Long-term partnership mindset",
-  "Scalable, secure architecture",
-  "Africa-first, globally-minded perspective",
-  "Ethical and responsible engineering",
+  "Real challenges with room to experiment",
+  "Learning through meaningful contribution",
+  "Guidance and feedback throughout the experience",
+  "Cross-disciplinary collaboration",
+  "Practical skills you can demonstrate",
+  "Modern tools and thoughtful practice",
+  "A community that keeps you moving forward",
+  "Opportunities for different experience levels",
+  "Africa-first, globally connected perspective",
+  "Ethical and responsible problem-solving",
 ];
 
 const CounterStat = ({
@@ -66,11 +66,11 @@ const WhyUsSection = () => {
           ref={headerRef as React.RefObject<HTMLDivElement>}
           className={`reveal ${headerVisible ? "visible" : ""} mb-20 text-center max-w-2xl mx-auto`}
         >
-          <span className="section-label block mb-4">Why Choose Us</span>
+          <span className="section-label block mb-4">Why Participate</span>
           <div className="gold-line mx-auto" />
-          <h2 className="section-heading mb-5">Why Workforce Global</h2>
+          <h2 className="section-heading mb-5">Experience That Moves You Forward</h2>
           <p className="section-subheading mx-auto text-center">
-            We don't just write code — we engineer outcomes. Here's what sets us apart.
+            The right opportunity can turn curiosity into capability, confidence, and community.
           </p>
         </div>
 
@@ -114,9 +114,9 @@ const WhyUsSection = () => {
               backgroundImage: "radial-gradient(ellipse at center, #C6A15B 0%, transparent 70%)",
             }}
           />
-          <p className="section-label mb-3">Ready to get started?</p>
+          <p className="section-label mb-3">Ready to take part?</p>
           <h3 className="text-3xl md:text-4xl font-bold text-foreground font-manrope mb-4">
-            Let's Build Something That Matters
+            Your Next Experience Starts Here
           </h3>
           <button
             onClick={() => {
@@ -125,7 +125,7 @@ const WhyUsSection = () => {
             }}
             className="btn-secondary mt-2"
           >
-            Schedule a Call
+            Find an Opportunity
           </button>
         </div>
       </div>

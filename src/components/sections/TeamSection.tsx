@@ -36,7 +36,7 @@ const TeamSection = () => {
           </h2>
           <p className="section-subheading mb-10 max-w-xl">
             Explore our interactive organisation chart to see our team, reporting
-            structure, and the people behind our company.
+            structure, and the people who create opportunities for our community.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">

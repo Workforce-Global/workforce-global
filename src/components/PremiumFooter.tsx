@@ -2,28 +2,28 @@ import { Github, Twitter, Linkedin, Instagram, ArrowUpRight } from "lucide-react
 
 
 const footerLinks = {
-  Company: [
+  Explore: [
     { label: "About", href: "#about" },
     { label: "Team", href: "#team" },
-    { label: "Process", href: "#process" },
-    { label: "Global Reach", href: "#global" },
+    { label: "How It Works", href: "#process" },
+    { label: "Our Community", href: "#clients" },
   ],
-  Services: [
-    { label: "Custom Software", href: "#services" },
-    { label: "Digital Commerce", href: "#services" },
-    { label: "Automation & AI", href: "#services" },
-    { label: "Strategy & Consulting", href: "#services" },
+  Learn: [
+    { label: "Learning Paths", href: "#services" },
+    { label: "Opportunities", href: "#projects" },
+    { label: "Mentorship", href: "#innovation" },
+    { label: "Community Events", href: "#innovation" },
   ],
-  Programs: [
+  Participate: [
     { label: "Hackathons", href: "#innovation" },
-    { label: "Product Sprints", href: "#innovation" },
-    { label: "Startup Incubation", href: "#innovation" },
+    { label: "Build Sprints", href: "#innovation" },
+    { label: "Innovation Challenges", href: "#innovation" },
     { label: "Student Programs", href: "#innovation" },
   ],
   Connect: [
-    { label: "Contact Us", href: "#contact" },
-    { label: "Start a Project", href: "#contact" },
-    { label: "Schedule a Call", href: "#contact" },
+    { label: "Join the Community", href: "#contact" },
+    { label: "Bring a Challenge", href: "#contact" },
+    { label: "Find a Mentor", href: "#contact" },
     { label: "connect@workforceglobal.com", href: "mailto:connect@workforceglobal.com" },
   ],
 };
@@ -68,8 +68,8 @@ const PremiumFooter = () => {
               className="text-xs text-muted-foreground leading-relaxed mb-6"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Engineering the Future, One Solution at a Time. Based in Accra, Ghana.
-              Building for the World.
+              A place to learn by doing through real challenges, collaboration, and practical
+              experience. Based in Accra, connected to the world.
             </p>
             {/* Social icons */}
             <div className="flex gap-2">
@@ -77,8 +77,6 @@ const PremiumFooter = () => {
                 <a
                   key={label}
                   href={href}
-                  className="w-9 h-9 rounded-xl border border-white/8 flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/30 transition-all duration-300"
-                  aria-label={label}
                 >
                   <Icon size={15} />
                 </a>

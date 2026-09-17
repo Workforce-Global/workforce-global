@@ -7,40 +7,40 @@ const steps = [
     number: "01",
     title: "Discover",
     description:
-      "We start by deeply understanding your goals, users, technical environment, and constraints. Every great solution begins with the right questions.",
-    detail: "Stakeholder interviews · Requirements analysis · Technical audit · Goal mapping",
+      "Start with your interests, current skills, and the kind of challenge you want to explore. Every useful experience begins with good questions.",
+    detail: "Choose a track · Understand the brief · Set a learning goal · Meet your peers",
   },
   {
     icon: Palette,
     number: "02",
     title: "Design",
     description:
-      "We craft the product strategy, information architecture, and user experience — ensuring every decision is grounded in user needs and business objectives.",
-    detail: "UX research · Wireframing · Prototyping · Design system creation",
+      "Shape a thoughtful approach with your team. You will learn to turn ambiguity into a clear plan and an experience people can use.",
+    detail: "Research · Ideation · Wireframing · Feedback",
   },
   {
     icon: Code2,
     number: "03",
     title: "Build",
     description:
-      "Our engineering teams build with modern, scalable technologies. We work in agile sprints with full transparency — you always know what's being built.",
-    detail: "Agile development · Code reviews · CI/CD pipelines · Quality assurance",
+      "Make, test, and improve something real. Work in small iterations, ask for help, and learn from the decisions your team makes.",
+    detail: "Collaborative building · Peer reviews · Experiments · Documentation",
   },
   {
     icon: Rocket,
     number: "04",
     title: "Launch",
     description:
-      "We deploy with precision. From staging environments to production rollouts, every launch is planned, tested, and executed with confidence.",
-    detail: "Deployment strategy · Load testing · Monitoring setup · Go-live support",
+      "Share what you made, what changed, and what you learned. Showing your work is part of building confidence and a useful portfolio.",
+    detail: "Demo day · Reflection · Portfolio evidence · Community feedback",
   },
   {
     icon: TrendingUp,
     number: "05",
     title: "Grow",
     description:
-      "The work doesn't stop at launch. We provide ongoing support, feature iterations, performance optimization, and strategic guidance.",
-    detail: "Continuous improvement · Analytics · Feature roadmap · Dedicated support",
+      "Carry the learning forward through new opportunities, mentorship, and challenges that help you keep developing.",
+    detail: "Next opportunity · Mentorship · Skill practice · Community contribution",
   },
 ];
 
@@ -55,12 +55,12 @@ const ProcessSection = () => {
           ref={headerRef as React.RefObject<HTMLDivElement>}
           className={`reveal ${headerVisible ? "visible" : ""} mb-20 text-center max-w-2xl mx-auto`}
         >
-          <span className="section-label block mb-4">How We Work</span>
+          <span className="section-label block mb-4">Your Journey</span>
           <div className="gold-line mx-auto" />
-          <h2 className="section-heading mb-5">Our Approach</h2>
+          <h2 className="section-heading mb-5">From Curiosity to Confidence</h2>
           <p className="section-subheading mx-auto text-center">
-            A proven methodology that delivers quality at every stage — from first
-            conversation to long-term partnership.
+            A practical rhythm that helps you find an opportunity, contribute meaningfully,
+            and turn each experience into your next step.
           </p>
         </div>
 

@@ -7,11 +7,11 @@ const navItems = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
   {
-    label: "Services",
+    label: "Learn",
     href: "#services",
-    sub: ["Custom Software", "Digital Commerce", "Automation", "Consulting"],
+    sub: ["Learning Tracks", "Challenges", "Mentorship", "Community"],
   },
-  { label: "Projects", href: "#projects" },
+  { label: "Opportunities", href: "#projects" },
   { label: "Team", href: "/team" },
   { label: "Contact", href: "#contact" },
 ];
@@ -170,7 +170,7 @@ const Navigation = () => {
                 onClick={() => scrollToSection("#contact")}
                 className="btn-secondary text-xs px-5 py-2.5"
               >
-                <span>Start a Project</span>
+                <span>Explore Opportunities</span>
               </button>
             </div>
 
@@ -218,7 +218,7 @@ const Navigation = () => {
                 onClick={() => scrollToSection("#contact")}
                 className="btn-secondary w-full justify-center"
               >
-                Start a Project
+                Explore Opportunities
               </button>
             </div>
           </div>

@@ -36,11 +36,11 @@ const AboutSection = () => {
           <div className="gold-line" />
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <h2 className="section-heading max-w-xl">
-              More Than a Software Company
+              A Place to Learn by Doing
             </h2>
             <p className="section-subheading lg:max-w-md">
-              We are a venture builder, technology partner, and innovation ecosystem
-              helping organizations turn ambitious ideas into impactful digital products.
+              We create pathways for people to learn, contribute, and grow through meaningful
+              challenges, practical experiences, and a generous community.
             </p>
           </div>
         </div>
@@ -65,9 +65,8 @@ const AboutSection = () => {
                 <span className="section-label text-gold">Our Mission</span>
               </div>
               <p className="text-muted-foreground leading-relaxed text-base">
-                To empower startups, businesses, NGOs, and institutions with cutting-edge
-                software solutions and innovation programs that solve real-world problems
-                and drive meaningful change in Africa and beyond.
+                To make practical learning accessible by connecting curious people with real
+                challenges, supportive collaborators, mentors, and opportunities to contribute.
               </p>
             </div>
           </div>
@@ -83,23 +82,21 @@ const AboutSection = () => {
                 <span className="section-label text-gold">Our Vision</span>
               </div>
               <p className="text-muted-foreground leading-relaxed text-base">
-                To be Africa's most trusted technology partner—building the digital
-                infrastructure that powers the continent's most ambitious companies and ideas.
+                To be a trusted home for people across Africa and beyond to discover their
+                strengths, build useful skills, and gain experience that opens new doors.
               </p>
             </div>
 
             <div className="card-premium flex-1">
               <span className="section-label block mb-4">Our Story</span>
               <p className="text-muted-foreground leading-relaxed text-base mb-4">
-                Workforce Global was founded with a clear conviction: that African talent
-                and ingenuity can build world-class technology. We started as a team of
-                passionate engineers and designers committed to proving that great software
-                can be built anywhere.
+                Workforce Global was founded with a clear conviction: people learn fastest
+                when they can work on meaningful problems with others. We bring together
+                curious learners, practitioners, mentors, and partners around that belief.
               </p>
               <p className="text-muted-foreground leading-relaxed text-base">
-                Today, we're a full-service innovation studio—building custom software,
-                organizing hackathons, running product sprints, and partnering with
-                organizations across sectors to engineer solutions that matter.
+                Today, we host challenges, learning programs, community events, and practical
+                experiences that help people move from interest to participation to confidence.
               </p>
             </div>
 

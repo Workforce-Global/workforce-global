@@ -1,62 +1,66 @@
 import { useState } from "react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import {
-  Code2, ShoppingCart, Cpu, Lightbulb, ArrowUpRight,
+  Code2, ShoppingCart, Cpu, Lightbulb, ArrowUpRight, Search,
   Globe, Smartphone, Database, Cog, BarChart3, Users2, Zap
 } from "lucide-react";
 
 const services = [
   {
     icon: Code2,
-    category: "Custom Software",
+    category: "Build & Create",
     description:
-      "End-to-end software engineering tailored to your business logic, from architecture to deployment.",
-    items: ["Enterprise Software", "Web Applications", "Mobile Apps", "APIs & Integrations"],
+      "Work on guided, real-world builds that turn ideas into useful experiences and portfolio evidence.",
+    items: ["Web Applications", "Mobile Apps", "APIs & Integrations", "Portfolio Pieces"],
     accent: "#C6A15B",
   },
   {
     icon: ShoppingCart,
-    category: "Digital Commerce",
+    category: "Solve Challenges",
     description:
-      "Scalable e-commerce platforms and customer-facing portals that convert and retain.",
-    items: ["E-commerce Platforms", "Payment Integration", "Customer Portals", "Inventory Systems"],
+      "Practice problem-solving with open challenges shaped around community and partner needs.",
+    items: ["Research", "Design Sprints", "Team Challenges", "Demo Days"],
     accent: "#C6A15B",
   },
   {
     icon: Cpu,
-    category: "Automation & AI",
+    category: "Explore Technology",
     description:
-      "Intelligent workflow automation and AI-powered tools that eliminate inefficiency.",
-    items: ["Workflow Automation", "Internal Tools", "AI Automation", "Process Optimization"],
+      "Explore modern tools with peers and mentors while developing practical technical fluency.",
+    items: ["Web Development", "Data & AI", "Cloud Tools", "Digital Making"],
     accent: "#C6A15B",
   },
   {
     icon: Lightbulb,
-    category: "Strategy & Innovation",
+    category: "Mentorship & Community",
     description:
-      "From product strategy to hackathons — we help you think, plan, and build with purpose.",
-    items: ["Product Strategy", "Technology Consulting", "Digital Transformation", "Innovation Workshops"],
+      "Find guidance, feedback, and collaborators who help you keep learning beyond a single opportunity.",
+    items: ["Peer Learning", "Mentorship", "Career Conversations", "Community Events"],
     accent: "#C6A15B",
   },
 ];
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  "Enterprise Software": Globe,
+  "Portfolio Pieces": Globe,
   "Web Applications": Code2,
   "Mobile Apps": Smartphone,
   "APIs & Integrations": Database,
-  "E-commerce Platforms": ShoppingCart,
-  "Payment Integration": Zap,
-  "Customer Portals": Users2,
-  "Inventory Systems": BarChart3,
+  "Research": Search,
+  "Design Sprints": Lightbulb,
+  "Team Challenges": Users2,
+  "Demo Days": ArrowUpRight,
   "Workflow Automation": Cog,
   "Internal Tools": Cpu,
   "AI Automation": Lightbulb,
   "Process Optimization": BarChart3,
-  "Product Strategy": Lightbulb,
-  "Technology Consulting": Users2,
-  "Digital Transformation": Globe,
-  "Innovation Workshops": Zap,
+  "Web Development": Code2,
+  "Data & AI": Lightbulb,
+  "Cloud Tools": Database,
+  "Digital Making": Smartphone,
+  "Peer Learning": Users2,
+  "Mentorship": Users2,
+  "Career Conversations": Globe,
+  "Community Events": Zap,
 };
 
 const ServicesSection = () => {
@@ -75,12 +79,12 @@ const ServicesSection = () => {
           ref={headerRef as React.RefObject<HTMLDivElement>}
           className={`reveal ${headerVisible ? "visible" : ""} mb-20 text-center max-w-2xl mx-auto`}
         >
-          <span className="section-label block mb-4">What We Build</span>
+          <span className="section-label block mb-4">Ways to Participate</span>
           <div className="gold-line mx-auto" />
-          <h2 className="section-heading mb-5">Our Services</h2>
+          <h2 className="section-heading mb-5">Find Your Learning Path</h2>
           <p className="section-subheading mx-auto text-center">
-            From product conception to production deployment, we deliver end-to-end
-            technology solutions that scale.
+            Choose a starting point, practice with others, and build the skills and experience
+            that matter to your next step.
           </p>
         </div>
 
@@ -153,7 +157,7 @@ const ServicesSection = () => {
                     className="text-xs font-medium text-gold hover:text-gold-light flex items-center gap-1.5 transition-colors"
                     style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                   >
-                    Learn More
+                    Explore This Path
                     <ArrowUpRight size={13} />
                   </button>
                 </div>

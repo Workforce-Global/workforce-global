@@ -28,7 +28,7 @@ const CTASection = () => {
           <span className="section-label block mb-6">Get In Touch</span>
           <div className="gold-line" />
           <h2 className="section-heading mb-6">
-            Let's Build Something{" "}
+            Find Your Next{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #D4B57A, #C6A15B, #9E7B3D)",
@@ -37,13 +37,13 @@ const CTASection = () => {
                 backgroundClip: "text",
               }}
             >
-              Extraordinary
+              Opportunity
             </span>{" "}
             Together
           </h2>
           <p className="section-subheading mb-10 max-w-xl">
-            Whether you're launching a startup, modernizing your business, or solving
-            complex challenges — Workforce Global is your trusted technology partner.
+            Whether you are learning your first tool, strengthening your practice, or ready
+            to guide someone else, there is a meaningful way to participate here.
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <button
@@ -53,17 +53,17 @@ const CTASection = () => {
               }}
               className="btn-primary group"
             >
-              <span>Schedule a Consultation</span>
+              <span>Explore Opportunities</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </button>
             <button
               onClick={() => {
-                const projects = document.querySelector("#projects");
-                if (projects) projects.scrollIntoView({ behavior: "smooth" });
+                const process = document.querySelector("#process");
+                if (process) process.scrollIntoView({ behavior: "smooth" });
               }}
               className="btn-secondary"
             >
-              View Our Work
+              See How It Works
             </button>
           </div>
         </div>

@@ -6,26 +6,26 @@ const programs = [
     icon: Trophy,
     title: "Hackathons",
     description:
-      "48–72 hour intensive innovation sprints where teams compete to build real solutions to real problems. We design, organize, and run hackathons for corporations, governments, and universities.",
+      "48–72 hour learning experiences where teams collaborate to explore real problems, test ideas, and share what they discover.",
     badge: "Signature Program",
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=700&q=80&auto=format&fit=crop",
   },
   {
     icon: Zap,
-    title: "Product Sprints",
+    title: "Guided Build Sprints",
     description:
-      "Accelerated 2–4 week product development cycles where our team works alongside your team to take an idea from concept to tested prototype.",
-    badge: "Rapid Delivery",
+      "Short, focused experiences where you work with a small team to take a real idea from questions to a tested prototype.",
+    badge: "Learn by Doing",
     image:
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&q=80&auto=format&fit=crop",
   },
   {
     icon: Rocket,
-    title: "Startup Incubation",
+    title: "Mentored Practice",
     description:
-      "A structured program providing early-stage founders with technical co-building, mentorship, and network access to launch and validate their ventures.",
-    badge: "Venture Building",
+      "A supportive space to try new responsibilities, receive feedback, and build the confidence to take your next step.",
+    badge: "Guidance",
     image:
       "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=700&q=80&auto=format&fit=crop",
   },
@@ -33,8 +33,8 @@ const programs = [
     icon: Lightbulb,
     title: "Innovation Challenges",
     description:
-      "Open innovation competitions that crowdsource solutions from diverse talent pools — students, professionals, and entrepreneurs — to address complex challenges.",
-    badge: "Open Innovation",
+      "Open challenges where students, professionals, and curious problem-solvers collaborate on questions that matter.",
+    badge: "Open to All",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80&auto=format&fit=crop",
   },
@@ -42,7 +42,7 @@ const programs = [
     icon: GraduationCap,
     title: "Student Programs",
     description:
-      "Technical training, mentorship, and project-based learning programs designed for university students entering the technology industry.",
+      "Technical training, mentorship, and project-based learning programs for students and early-career people building their next skills.",
     badge: "Education",
     image:
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=700&q=80&auto=format&fit=crop",
@@ -51,7 +51,7 @@ const programs = [
     icon: Users2,
     title: "Community Events",
     description:
-      "Conferences, meetups, demo days, and developer gatherings that build the innovation ecosystem across Ghana and Africa.",
+      "Conferences, meetups, demo days, and developer gatherings that help people find peers, mentors, and their next opportunity.",
     badge: "Community",
     image:
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80&auto=format&fit=crop",
@@ -73,15 +73,15 @@ const InnovationSection = () => {
           ref={headerRef as React.RefObject<HTMLDivElement>}
           className={`reveal ${headerVisible ? "visible" : ""} mb-20`}
         >
-          <span className="section-label block mb-4">Innovation Programs</span>
+              <span className="section-label block mb-4">Opportunity Formats</span>
           <div className="gold-line" />
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <h2 className="section-heading max-w-xl">
-              Beyond Software, We Build Ecosystems
+              More Ways to Grow Through Experience
             </h2>
             <p className="section-subheading lg:max-w-sm">
-              Our programs cultivate talent, drive innovation, and build the communities
-              that fuel Africa's digital future.
+              Choose the format that fits your goals, from short challenges to ongoing
+              mentorship and community learning.
             </p>
           </div>
         </div>

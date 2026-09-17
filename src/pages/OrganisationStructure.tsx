@@ -116,7 +116,7 @@ const OrganisationStructure = () => {
           <div className="flex flex-wrap items-center gap-6 mb-6 text-xs text-muted-foreground" style={{ fontFamily: "'Inter', sans-serif" }}>
             <span className="flex items-center gap-2">
               <span className="inline-block w-5 h-5 rounded-full border-2 border-gold/70 bg-gold/15" />
-              CEO / Co-Founder
+              Community Director
             </span>
             <span className="flex items-center gap-2">
               <span className="inline-block w-4 h-4 rounded-full border border-gold/30 bg-card" />

@@ -3,7 +3,7 @@ import { MapPin, Globe2, Users2, Wifi } from "lucide-react";
 
 const highlights = [
   { icon: MapPin, label: "Headquartered in Accra, Ghana" },
-  { icon: Globe2, label: "Serving clients across 12+ countries" },
+  { icon: Globe2, label: "Connecting learners across 12+ countries" },
   { icon: Wifi, label: "Remote-first collaboration model" },
   { icon: Users2, label: "Global network of partners & alumni" },
 ];
@@ -64,8 +64,8 @@ const GlobalSection = () => {
             </span>
           </h2>
           <p className="section-subheading mx-auto text-center">
-            From Accra to Amsterdam, our remote-first model means we can collaborate
-            with organizations anywhere on the planet.
+            From Accra to Amsterdam, our remote-first community makes it possible to learn,
+            collaborate, and contribute with people anywhere on the planet.
           </p>
         </div>
 
